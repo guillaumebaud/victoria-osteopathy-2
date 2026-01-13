@@ -1669,6 +1669,8 @@ h6,
 /* Clinic Info Section */
 .clinic-info-section {
   padding: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
   background: #fff;
   height: 100%;
 }
@@ -1858,4 +1860,29 @@ h6,
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
+}
+
+/* Make booking section rows equal height */
+.booking-content-section .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.booking-content-section .row>[class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make map fill its column */
+.booking-content-section .map-wrapper {
+  flex: 1;
+  min-height: 400px;
+}
+
+/* Location separator styling */
+.booking-content-section .location-separator {
+  border: 0;
+  border-top: 2px solid #e0e0e0;
+  margin: 90px 0;
+  opacity: 0.5;
 }

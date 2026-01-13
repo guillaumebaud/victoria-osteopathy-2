@@ -1864,8 +1864,6 @@ input[type=radio]:checked~label::before {
 }
 
 label {
-  margin-bottom: 0.5em;
-  margin-top: -0.3em;
   display: block;
   color: var(--title-color);
   font-family: var(--body-font);

@@ -1,6 +1,6 @@
-import CustomHeader from "~/sections/Common/Header/CustomHeader";
-import CustomFooter from "~/sections/Common/Footer/CustomFooter";
-import AboutOsteopathyContent from "~/sections/AboutOsteopathy/AboutOsteopathyContent";
+import CustomHeader from "~/app/_components/CustomHeader";
+import CustomFooter from "~/app/_components/CustomFooter";
+import AboutOsteopathyContent from "./AboutOsteopathyContent";
 
 import "~/public/main-assets/css/bootstrap.min.css";
 import "~/public/main-assets/css/fontawesome.min.css";
