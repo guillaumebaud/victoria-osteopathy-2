@@ -1,0 +1,1664 @@
+/* ========================================
+   GOOGLE FONTS IMPORT
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Victoria Osteopathy Custom Styles */
+
+:root {
+  /* Font overrides for professional and trustworthy appearance */
+  --title-font: "Montserrat", sans-serif !important;
+  --body-font: "Open Sans", sans-serif !important;
+
+  /* Override theme colors for healthcare/medical feel */
+  --theme-color: #2E5EAA;
+  /* Professional healthcare blue */
+  --accent-blue: #4A90BE;
+  /* Secondary blue for accents */
+  --light-blue: #E8F4FD;
+  /* Light blue for backgrounds */
+  --dark-blue: #1E3A8A;
+  /* Darker blue for emphasis */
+}
+
+/* ========================================
+   GLOBAL FONT APPLICATION
+   ======================================== */
+/* Ensure fonts are applied globally */
+body,
+p,
+span,
+div,
+a,
+li,
+td,
+th,
+input,
+textarea,
+select {
+  font-family: var(--body-font) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sec-title,
+.hero-title,
+.card-title,
+.service-card_title,
+.btn,
+.nav-link,
+.navbar-brand,
+.custom-hero-title {
+  font-family: var(--title-font) !important;
+}
+
+/* Remove any remaining animation classes that might cause issues */
+.animation-infinite,
+.jump,
+.jump-reverse {
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Enhance accessibility and professional appearance */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 94, 170, 0.3);
+}
+
+/* Ensure professional healthcare styling */
+.hero-title {
+  font-weight: 700;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(46, 94, 170, 0.15);
+}
+
+/* Custom styles for osteopathy branding */
+.osteopathy-accent {
+  color: var(--theme-color);
+}
+
+.osteopathy-bg {
+  background-color: var(--light-blue);
+}
+
+/* Fix pricing card hover - keep border but prevent background change on details */
+.pricing-card:hover .pricing-card-details {
+  background: transparent !important;
+}
+
+/* Ensure paragraph text remains readable in pricing cards */
+.pricing-card-details p {
+  color: inherit;
+}
+
+/* Blue square icon for About section checklist */
+.blue-square-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--theme-color);
+  margin-right: 10px;
+  margin-top: 6px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+/* Improve FAQ text paragraph spacing */
+.faq-text {
+  margin-bottom: 15px !important;
+}
+
+/* Fix FAQ accordion arrow indicator - more specific targeting */
+.accordion-area .accordion-button::after {
+  content: '▼' !important;
+  background-image: none !important;
+  font-size: 14px !important;
+  color: var(--theme-color) !important;
+  transform: rotate(0deg) !important;
+  transition: transform 0.3s ease !important;
+  width: auto !important;
+  height: auto !important;
+  background-size: auto !important;
+  border: none !important;
+  margin-left: 10px !important;
+}
+
+.accordion-area .accordion-button:not(.collapsed)::after {
+  transform: rotate(180deg) !important;
+}
+
+/* Ensure the accordion button maintains proper layout */
+.accordion-area .accordion-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-align: left !important;
+  padding: 15px 20px !important;
+  border: none !important;
+  background: transparent !important;
+  width: 100% !important;
+}
+
+/* Fix header layout issues */
+.header-layout2 .menu-area {
+  position: relative !important;
+  /* Increase header height */
+}
+
+/* Remove negative margin from logo background */
+.header-layout2 .menu-area .logo-bg {
+  top: 0 !important;
+  /* Remove negative top margin */
+  height: 100% !important;
+  /* Adjust height to match new padding */
+}
+
+/* Ensure sticky header maintains proper height */
+.sticky-wrapper.sticky .header-layout2 .menu-area {
+  padding: 15px 0 !important;
+  /* Slightly smaller when sticky */
+}
+
+/* Fix header navbar logo issues */
+.header-navbar-logo {
+  margin: 15px !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: none;
+  position: relative !important;
+  float: left;
+}
+
+.header-navbar-logo img {
+  margin: 10px;
+  max-width: 220px;
+}
+
+/* Fix navbar right description negative margin */
+.header-layout2 .navbar-right-desc {
+  top: 0 !important;
+  /* Remove negative top margin */
+  height: 100% !important;
+  /* Adjust height to match container */
+  padding: 15px 60px 15px 32px !important;
+  /* Add proper padding instead of relying on negative margins */
+}
+
+/* Add border to header */
+.nav-header {
+  border-bottom: 1px solid #e9e9e9 !important;
+}
+
+/* ========================================
+   SIMPLE HEADER - CLEAN & MINIMAL
+   ======================================== */
+
+.simple-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Smoother easing */
+  transform: translateY(0);
+  /* Start position for animation */
+}
+
+.simple-header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(0);
+  /* Ensure it slides down smoothly */
+  animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Add slide down animation */
+}
+
+/* Keyframe animation for smooth sticky header appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.simple-header-container {
+  max-width: 100%;
+  /* Changed from 1200px to 100% */
+  margin: 0 auto;
+  padding: 0 50px;
+  /* Increased from 30px to 50px */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Changed from space-between to flex-start */
+  height: 80px;
+}
+
+/* Logo - bigger and more to the left */
+.simple-logo {
+  margin-right: 80px;
+  /* Add space between logo and nav */
+}
+
+.simple-logo img {
+  max-height: 65px;
+  /* Increased from 55px to 65px */
+  /* Increased from 45px */
+  width: auto;
+}
+
+/* Desktop Navigation - positioned after logo, not centered */
+.simple-nav {
+  position: static;
+  /* Changed from absolute positioning */
+  left: auto;
+  transform: none;
+  margin-right: auto;
+  /* Push button to far right */
+}
+
+.simple-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+}
+
+.simple-nav ul li a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  font-size: 15px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.simple-nav ul li a:hover {
+  color: #333;
+}
+
+/* CTA Button - matches screenshot style */
+.simple-cta {
+  background: #5DADE2;
+  color: white !important;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+.simple-cta:hover {
+  background: #3498DB;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(93, 173, 226, 0.3);
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobile-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #333;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  background: white;
+  border-top: 1px solid #e0e0e0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin-top: 0px;
+}
+
+.mobile-menu.open {
+  display: block;
+  max-height: 400px;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+  color: #333;
+}
+
+.mobile-cta {
+  background: #5DADE2 !important;
+  color: white !important;
+  padding: 15px 25px;
+  text-align: center;
+  margin: 15px 0;
+  border: none !important;
+  font-weight: 500;
+}
+
+/* Hide/Show for different screen sizes */
+.desktop-only {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1140px) {
+  .simple-nav {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1140px) {
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .simple-header-container {
+    height: 70px;
+    padding: 0 20px;
+    justify-content: space-between;
+    /* Logo left, hamburger right */
+  }
+
+  .simple-logo img {
+    max-height: 50px;
+    /* Increased from 40px to 50px */
+  }
+}
+
+/* ========================================
+   ABOUT SECTION - SIMPLIFIED STYLES
+   ======================================== */
+
+/* Remove the animated blue bar completely */
+.about-thumb2:after {
+  display: none !important;
+}
+
+/* Simplify about-thumb2 - remove all complex positioning */
+.about-thumb2 {
+  position: relative !important;
+  padding: 0 !important;
+  /* Remove all padding */
+  margin: 0 !important;
+}
+
+/* Center the image container for all screen sizes */
+.about-thumb2 .about-img-1 {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-bottom: 40px !important;
+  /* Add bottom spacing to separate from text content */
+}
+
+/* Center and size the image properly */
+.about-thumb2 .about-img-1 img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 8px !important;
+  /* Optional: add subtle rounded corners */
+}
+
+/* Remove any counter wrap positioning issues */
+.about-thumb2 .about-counter-wrap {
+  display: none !important;
+  /* Hide any counter elements if they exist */
+}
+
+/* Override all the breakpoint madness with simple responsive rules */
+@media (max-width: 1399px) {
+  .about-thumb2 {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 1299px) {
+  .about-thumb2 {
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 1200px) {
+
+  /* When image column goes full width, ensure it's centered */
+  .about-thumb2 .about-img-1 img {
+    max-width: 400px !important;
+    /* Limit max size on mobile */
+  }
+}
+
+@media (max-width: 575px) {
+  .about-thumb2 {
+    padding: 0 !important;
+    margin-bottom: 30px !important;
+    /* Add some space on mobile */
+  }
+
+  .about-thumb2 .about-img-1 img {
+    max-width: 300px !important;
+    /* Smaller max size on small mobile */
+  }
+}
+
+/* ========================================
+   FAQ ACCORDION FIXES
+   ======================================== */
+
+/* Remove annoying uppercase text from FAQ questions */
+.accordion-card .accordion-button {
+  text-transform: none !important;
+  /* Override the uppercase transform */
+}
+
+/* ========================================
+   GLOBAL TEXT COLOR IMPROVEMENTS
+   ======================================== */
+
+/* Soften harsh black text to dark grey for better readability */
+.sec-title,
+.hero-title,
+.card-title,
+.service-card_title,
+.about-title,
+.pricing-title,
+.faq-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.accordion-card .accordion-button {
+  color: #2D3748 !important;
+  /* Softer dark grey instead of pure black */
+}
+
+/* Exception: Footer headings should remain white */
+.custom-footer h1,
+.custom-footer h2,
+.custom-footer h3,
+.custom-footer h4,
+.custom-footer h5,
+.custom-footer h6,
+.custom-footer .sec-title,
+.custom-footer .hero-title,
+.custom-footer .card-title {
+  color: white !important;
+  /* Override the dark gray for footer */
+}
+
+/* Also soften the main title color variable if used */
+:root {
+  --title-color: #2D3748;
+  /* Override any pure black title colors */
+}
+
+/* ========================================
+   ABOUT OSTEOPATHY PAGE STYLES
+   ======================================== */
+
+.about-osteopathy-hero {
+  background: linear-gradient(135deg, var(--theme-color) 0%, var(--accent-blue) 100%);
+  color: white;
+  text-align: center;
+}
+
+.about-osteopathy-hero .hero-title {
+  color: white !important;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-osteopathy-hero .hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+/* About Us Hero Styles */
+.about-us-hero {
+  background: linear-gradient(135deg, var(--theme-color) 0%, var(--accent-blue) 100%);
+  color: white;
+  text-align: center;
+}
+
+.about-us-hero .hero-title {
+  color: white !important;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about-us-hero .hero-subtitle {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+}
+
+.osteopathy-intro-section,
+.osteopathy-detailed-section,
+.osteopathy-foundation-section,
+.osteopathy-cta-section {
+  padding: 80px 0;
+}
+
+.osteopathy-treatment-section {
+  padding: 80px 0;
+  background: #F8FAFC;
+}
+
+.osteopathy-content,
+.detailed-content,
+.foundation-content {
+  padding-right: 30px;
+}
+
+.content-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5A6C7D;
+  margin-bottom: 20px;
+}
+
+/* Placeholder image styling */
+.placeholder-image {
+  background: linear-gradient(135deg, var(--light-blue) 0%, #E2E8F0 100%);
+  border-radius: 12px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.placeholder-content {
+  color: var(--theme-color);
+}
+
+.placeholder-content i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.placeholder-content p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Treatment list styling */
+.treatment-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.treatment-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #5A6C7D;
+  margin-bottom: 5px;
+}
+
+.treatment-list li i {
+  color: var(--theme-color);
+  margin-right: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Better spacing for osteopathy treatment section */
+.osteopathy-treatment-section .col-md-6 {
+  display: flex;
+  justify-content: center;
+}
+
+.osteopathy-treatment-section .treatment-list {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Principles list styling */
+.principles-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2D3748;
+  margin-bottom: 15px;
+}
+
+.principles-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.principles-list li {
+  display: flex;
+  align-items: flex-start;
+  padding: 8px 0;
+  font-size: 16px;
+  color: #5A6C7D;
+  font-weight: 500;
+}
+
+.principles-list li i {
+  color: var(--theme-color);
+  margin-right: 12px;
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+/* Quote styling */
+.osteopathy-quote {
+  background: rgba(46, 94, 170, 0.1);
+  border-left: 4px solid var(--theme-color);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 30px;
+}
+
+.osteopathy-quote p {
+  font-style: italic;
+  font-size: 16px;
+  color: #2D3748;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.osteopathy-quote cite {
+  font-size: 14px;
+  color: var(--theme-color);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Foundation image styling */
+.foundation-image {
+  text-align: center;
+}
+
+.foundation-image img {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  height: auto;
+}
+
+.image-caption {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-caption p {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+  font-style: italic;
+}
+
+/* CTA section styling */
+.cta-buttons {
+  margin-top: 30px;
+}
+
+.cta-buttons .btn {
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+
+  .about-osteopathy-hero .hero-title,
+  .about-us-hero .hero-title {
+    font-size: 36px;
+  }
+
+  .osteopathy-content,
+  .foundation-content {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .osteopathy-intro-section,
+  .osteopathy-detailed-section,
+  .osteopathy-foundation-section,
+  .osteopathy-cta-section,
+  .osteopathy-treatment-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .about-osteopathy-hero .hero-title,
+  .about-us-hero .hero-title {
+    font-size: 28px;
+  }
+
+  .about-osteopathy-hero .hero-subtitle,
+  .about-us-hero .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    margin-bottom: 15px;
+    margin-right: 0 !important;
+  }
+}
+
+/* ========================================
+   ABOUT DETAILED PAGE STYLES
+   ======================================== */
+
+.about-detailed-area {
+  padding: 80px 0;
+}
+
+.about-detailed-area .container {
+  max-width: 1400px;
+  /* Increase from default to give more breathing room */
+}
+
+.about-detailed-image {
+  position: relative;
+  max-width: 450px;
+  /* Limit the image container width */
+  margin: 0 auto;
+  /* Center the image */
+}
+
+.about-detailed-image img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Use padding instead of gap to maintain Bootstrap grid */
+.about-detailed-area .col-lg-6:first-child {
+  padding-right: 40px;
+  /* Add space to the right of the image column */
+}
+
+.about-detailed-area .col-lg-6:last-child {
+  padding-left: 40px;
+  /* Add space to the left of the text column */
+}
+
+@media (max-width: 991px) {
+
+  .about-detailed-area .col-lg-6:first-child,
+  .about-detailed-area .col-lg-6:last-child {
+    padding-left: 15px;
+    /* Reset to Bootstrap default on tablets */
+    padding-right: 15px;
+  }
+
+  .about-detailed-image {
+    max-width: 400px;
+    /* Slightly smaller on tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-detailed-image {
+    max-width: 350px;
+    /* Smaller on mobile */
+  }
+}
+
+/* Credentials overlay box */
+.credentials-overlay {
+  position: absolute;
+  bottom: -40px;
+  left: 20px;
+  right: 20px;
+  background: rgba(46, 94, 170, 0.95);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.credentials-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.credentials-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  margin-top: 2px;
+}
+
+.credentials-icon i {
+  font-style: normal;
+}
+
+.credentials-text {
+  flex: 1;
+}
+
+.credentials-overlay h4 {
+  color: white !important;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.credentials-overlay p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.about-subtitle {
+  color: var(--theme-color);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.about-intro {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #5A6C7D;
+  margin-bottom: 2rem;
+}
+
+.education-card,
+.approach-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover,
+.approach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.education-icon,
+.approach-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--theme-color), var(--accent-blue));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.education-content h4,
+.approach-content h4 {
+  color: var(--theme-color);
+  margin-bottom: 0.5rem;
+}
+
+.education-content h5 {
+  color: #2D3748;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.institution {
+  color: var(--accent-blue);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.philosophy-points {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.philosophy-points li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: #5A6C7D;
+}
+
+.philosophy-points li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--theme-color);
+  font-weight: bold;
+}
+
+/* What to Expect Cards */
+.expect-card {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.expect-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.expect-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--theme-color), var(--accent-blue));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+
+.expect-card h4 {
+  color: #2D3748;
+  margin-bottom: 15px;
+}
+
+.expect-card p {
+  color: #5A6C7D;
+  line-height: 1.6;
+}
+
+/* ========================================
+   TESTIMONIALS SECTION STYLES
+   ======================================== */
+
+.testimonial-section-area {
+  background-color: #F8FAFC !important;
+  padding: 80px 0;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-rating .stars {
+  color: #FFD700;
+  /* Gold/Yellow color for stars */
+  font-size: 20px;
+  /* Slightly larger for better visibility */
+  display: flex;
+  gap: 3px;
+  margin-bottom: 5px;
+}
+
+.testimonial-rating .stars i.ri-star-fill {
+  color: #FFD700;
+  /* Ensure filled stars are gold */
+}
+
+.testimonial-rating .stars i.ri-star-line {
+  color: #E2E8F0;
+  /* Light gray for empty stars */
+}
+
+.testimonial-content {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.testimonial-text {
+  font-style: italic;
+  line-height: 1.7;
+  color: #5A6C7D;
+  margin-bottom: 0;
+}
+
+/* Read More Button Styles */
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--theme-color);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px 0;
+  margin-top: 10px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: var(--accent-blue);
+}
+
+.author-name {
+  color: #2D3748;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.author-location {
+  color: var(--theme-color);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Author photo and info layout */
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.author-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #E2E8F0;
+}
+
+.author-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6B7280;
+  font-size: 20px;
+}
+
+.author-avatar-fallback .user-icon {
+  font-size: 24px;
+  color: #6B7280;
+}
+
+.author-details {
+  flex-grow: 1;
+}
+
+.testimonial-cta {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-cta h4 {
+  color: #2D3748;
+}
+
+.testimonial-cta p {
+  color: #5A6C7D;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-detailed-area {
+    padding: 60px 0;
+  }
+
+  .education-card,
+  .approach-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .expect-card {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* ========================================
+   CUSTOM FOOTER - CLEAN & MINIMAL
+   ======================================== */
+
+.custom-footer {
+  background: linear-gradient(135deg, #1E3A8A 0%, #2E5EAA 100%);
+  color: white;
+  padding: 60px 0 0;
+  position: relative;
+}
+
+.custom-footer-content {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Align all columns properly */
+.custom-footer-content .row {
+  align-items: flex-start;
+}
+
+.custom-footer-content .col-lg-4,
+.custom-footer-content .col-lg-3,
+.custom-footer-content .col-lg-5 {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-footer-logo {
+  margin-bottom: 20px;
+}
+
+.custom-footer-logo img {
+  max-height: 50px;
+}
+
+.custom-footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+  margin-top: auto;
+  /* Push text to bottom of its container */
+}
+
+.custom-footer-title {
+  font-family: var(--title-font) !important;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white !important;
+  /* Make white color more specific */
+  margin-top: 0 !important;
+  /* Align with logo top */
+}
+
+/* Ensure all footer headings are white */
+.custom-footer h3,
+.custom-footer h4,
+.custom-footer h5,
+.custom-footer .footer-title,
+.custom-footer .widget-title {
+  color: white !important;
+}
+
+/* Add spacing to Quick Links column */
+.custom-footer-content .col-lg-3 {
+  padding-left: 40px;
+  /* Add extra spacing from the left content */
+}
+
+.custom-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.custom-footer-links li {
+  margin-bottom: 12px;
+}
+
+.custom-footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.custom-footer-links a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.custom-footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.contact-item span {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover span {
+  color: white;
+}
+
+.custom-footer-bottom {
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+.custom-copyright,
+.custom-footer-note {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .custom-footer {
+    padding: 40px 0 0;
+  }
+
+  .custom-footer-content {
+    text-align: center;
+  }
+
+  .custom-footer-contact {
+    align-items: center;
+  }
+
+  .custom-footer-bottom .text-md-end {
+    text-align: center !important;
+  }
+}
+
+/* Force proper alignment - stronger rules */
+.custom-footer .row.align-items-center {
+  align-items: flex-start !important;
+}
+
+.custom-footer-title {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Ensure all footer columns start at the same height */
+.custom-footer-content>.row>div {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* ========================================
+   CUSTOM HERO - BACKGROUND IMAGE STYLE
+   ======================================== */
+.custom-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.custom-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.custom-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* Increased from 0.4 to 0.6 for better contrast */
+  z-index: 2;
+}
+
+.custom-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: left;
+  /* Changed from center to left */
+  color: white !important;
+  /* Force white text */
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.custom-hero-container {
+  max-width: 700px;
+  margin: 0 auto 0 -35%;
+  /* Changed from 10% to 5% - moves container further left */
+  /* Left margin 5%, right auto - positions more to the left */
+}
+
+.custom-hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: white !important;
+  /* Force white title */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  /* Stronger text shadow */
+}
+
+.custom-hero-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  color: white !important;
+  /* Force white text */
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  /* Stronger text shadow */
+}
+
+.custom-hero-actions {
+  display: flex;
+  justify-content: flex-start;
+  /* Changed from center to flex-start for left alignment */
+  gap: 20px;
+}
+
+.custom-hero-btn {
+  background: var(--theme-color);
+  color: white !important;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-hero-btn:hover {
+  background: var(--dark-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 94, 170, 0.4);
+}
+
+/* Responsive - Override positioning for smaller screens */
+@media (max-width: 1200px) {
+  .custom-hero-container {
+    margin: 0 auto !important;
+    /* Center on tablets and smaller screens */
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .custom-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .custom-hero-text {
+    font-size: 1.1rem;
+  }
+
+  .custom-hero-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-hero-title {
+    font-size: 2rem;
+  }
+
+  .custom-hero-text {
+    font-size: 1rem;
+  }
+}
+
+/* Fix vertical centering of navigation and buttons */
+.header-layout2 .menu-area .container .row {
+  min-height: 80px !important;
+  /* Set consistent height */
+  align-items: center !important;
+  /* Vertically center all items */
+}
+
+/* Ensure main navigation is properly centered */
+.header-layout2 .main-menu {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.header-layout2 .main-menu ul {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fix header button alignment */
+.header-layout2 .header-button {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  height: 100% !important;
+}
+
+/* Ensure navbar right section is centered */
+.header-layout2 .navbar-right-desc {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* AGGRESSIVE FIX: Force proper vertical centering for header elements */
+.header-layout2 .menu-area {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 80px !important;
+  padding: 0 !important;
+}
+
+.header-layout2 .menu-area .container {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.header-layout2 .menu-area .container .row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  /* Changed from space-between to flex-start */
+  width: 100% !important;
+  margin: 0 !important;
+  min-height: 80px !important;
+}
+
+/* Push button to the right */
+.header-layout2 .menu-area .col-auto:last-child {
+  margin-left: auto !important;
+  /* This pushes the button to the right */
+}
+
+/* Force navigation to be centered */
+.header-layout2 .menu-area .col-auto {
+  display: flex !important;
+  align-items: center !important;
+  height: 80px !important;
+}
+
+.header-layout2 .main-menu ul {
+  display: flex !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+.header-layout2 .main-menu ul li {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+/* Force button to be centered */
+.header-layout2 .header-button {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.header-layout2 .header-button .btn {
+  margin: 0 !important;
+}
+
+/* Hide duplicate logo on desktop - only show the left one */
+.header-layout2 .menu-area .container .row .col-auto:first-child .header-logo {
+  display: none !important;
+}
+
+/* Fix button overlap with phone number - add proper spacing */
+.header-layout2 .menu-area .container .row {
+  padding-right: 300px !important;
+  /* Make space for phone number section */
+}
+
+/* Ensure phone number section doesn't get covered */
+.header-layout2 .navbar-right-desc {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  z-index: 10 !important;
+  width: 280px !important;
+  /* Fixed width for phone section */
+}
