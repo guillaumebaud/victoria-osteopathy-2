@@ -32,17 +32,40 @@ const CustomFooter = () => {
 
             {/* Contact Info */}
             <div className="col-lg-5 col-md-12">
-              <h5 className="custom-footer-title">Contact Information</h5>
-              <div className="custom-footer-contact">
-                <div className="contact-item">
-                  <span>905-933-8594</span>
+              <div className="d-flex justify-content-between align-items-start flex-wrap gap-4">
+                <div>
+                  <h5 className="custom-footer-title">Contact Information</h5>
+                  <div className="custom-footer-contact">
+                    <div className="contact-item">
+                      <span>905-933-8594</span>
+                    </div>
+                    <div className="contact-item">
+                      <span>info@victoriaosteopathy.ca</span>
+                    </div>
+                    <div className="contact-item">
+                      <span>Victoria, British Columbia</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="contact-item">
-                  <span>info@victoriaosteopathy.ca</span>
-                </div>
-                <div className="contact-item">
-                  <span>Victoria, British Columbia</span>
-                </div>
+
+                {/* reCAPTCHA Badge */}
+                <a
+                  href="https://www.google.com/recaptcha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="recaptcha-badge"
+                >
+                  <img
+                    src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+                    alt="reCAPTCHA"
+                    width={32}
+                    height={32}
+                  />
+                  <div className="recaptcha-badge-text">
+                    <span>protected by</span>
+                    <span><strong>reCAPTCHA</strong></span>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

@@ -38,7 +38,7 @@ const ClinicInfoPeninsula = () => {
           target="_blank"
           rel="noopener noreferrer"
           variant="contained"
-          size="large"
+          size="small"
           fullWidth
           endIcon={<ArrowOutwardIcon />}
         >
@@ -46,9 +46,6 @@ const ClinicInfoPeninsula = () => {
         </Button>
       </div>
 
-      <div className="clinic-note">
-        <p>* For in-home treatments please contact us directly using the form below</p>
-      </div>
     </div>
   );
 };

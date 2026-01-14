@@ -355,13 +355,13 @@ h5,
 }
 
 /* Responsive */
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .simple-nav {
     gap: 30px;
   }
 }
 
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .desktop-only {
     display: none;
   }
@@ -379,7 +379,6 @@ h5,
 
   .simple-logo img {
     max-height: 50px;
-    /* Increased from 40px to 50px */
   }
 }
 
@@ -427,8 +426,13 @@ h5,
 @media (max-width: 575px) {
   .about-thumb2 {
     padding: 0 !important;
-    margin-bottom: 30px !important;
-    /* Add some space on mobile */
+    margin-bottom: 40px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .about-area-2 .col-xl-6:first-child {
+    margin-bottom: 40px;
   }
 }
 
@@ -516,12 +520,6 @@ h5,
 .osteopathy-treatment-section {
   padding: 80px 0;
   background: #F8FAFC;
-}
-
-.osteopathy-content,
-.detailed-content,
-.foundation-content {
-  padding-right: 30px;
 }
 
 .content-text {
@@ -674,6 +672,10 @@ h5,
 /* CTA section styling */
 .cta-buttons {
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
 
 .cta-buttons .btn {
@@ -778,7 +780,7 @@ h5,
 @media (max-width: 768px) {
   .about-detailed-image {
     max-width: 350px;
-    /* Smaller on mobile */
+    margin-bottom: 50px; /* Space for credentials overlay */
   }
 }
 
@@ -1140,11 +1142,23 @@ h5,
     text-align: center;
   }
 
+  .custom-footer-content .col-lg-3 {
+    padding-left: 15px;
+  }
+
   .custom-footer-contact {
     align-items: center;
   }
 
-  .custom-footer-bottom .text-md-end {
+  .custom-footer-bottom {
+    text-align: center;
+    padding-bottom: 80px; /* FAB clearance */
+  }
+
+  .custom-footer-bottom .text-md-end,
+  .custom-footer-bottom .col-md-6,
+  .custom-copyright,
+  .custom-footer-note {
     text-align: center !important;
   }
 }
@@ -1559,5 +1573,81 @@ h5,
 
   .policy-content h2 {
     font-size: 20px;
+  }
+}
+
+/* ========================================
+   HIDE RECAPTCHA BADGE & CUSTOM FOOTER BADGE
+   (Attribution moved to footer per Google's terms)
+   ======================================== */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+.recaptcha-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.recaptcha-badge:hover {
+  background: rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+}
+
+.recaptcha-badge img {
+  flex-shrink: 0;
+}
+
+.recaptcha-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.recaptcha-badge-text span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+}
+
+.recaptcha-badge-text strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  /* Stack contact info and badge vertically on mobile */
+  .col-lg-5 .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .col-lg-5 .d-flex.justify-content-between > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .col-lg-5 .custom-footer-title,
+  .col-lg-5 .custom-footer-contact {
+    text-align: center;
+    width: 100%;
+  }
+
+  .col-lg-5 .custom-footer-contact .contact-item {
+    justify-content: center;
+  }
+
+  .recaptcha-badge {
+    margin-top: 25px;
+    align-self: center;
   }
 }

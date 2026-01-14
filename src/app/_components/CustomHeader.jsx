@@ -2,11 +2,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Fab, useMediaQuery, useTheme } from "@mui/material";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const CustomHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg')); // matches 1140px breakpoint
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,7 @@ const CustomHeader = () => {
   }, []);
 
   return (
+    <>
     <header className={`simple-header ${isSticky ? 'sticky' : ''}`}>
       <div className="simple-header-container">
         {/* Logo */}
@@ -43,16 +47,17 @@ const CustomHeader = () => {
           </ul>
         </nav>
 
-        {/* CTA Button */}
-        <Button
-          component={Link}
-          href="/book-appointment"
-          variant="contained"
-          size="medium"
-          className="desktop-only"
-        >
-          Book an appointment
-        </Button>
+        {/* CTA Button - Desktop only */}
+        {!isMobile && (
+          <Button
+            component={Link}
+            href="/book-appointment"
+            variant="contained"
+            size="medium"
+          >
+            Book an appointment
+          </Button>
+        )}
 
         {/* Mobile Menu Button */}
         <button
@@ -73,22 +78,35 @@ const CustomHeader = () => {
           <li><Link href="/about-osteopathy" onClick={() => setIsMobileMenuOpen(false)}>About Osteopathy</Link></li>
           <li><Link href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link></li>
           <li><Link href="/book-appointment" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
-          <li>
-            <Button
-              component={Link}
-              href="/book-appointment"
-              variant="contained"
-              size="large"
-              fullWidth
-              onClick={() => setIsMobileMenuOpen(false)}
-              sx={{ mt: 1 }}
-            >
-              Book an appointment
-            </Button>
-          </li>
         </ul>
       </div>
+
     </header>
+
+    {/* Mobile FAB - Floating Action Button (outside header to avoid transform issues) */}
+    {isMobile && (
+      <Fab
+        component={Link}
+        href="/book-appointment"
+        color="primary"
+        aria-label="Book appointment"
+        sx={{
+          position: 'fixed',
+          bottom: 24,
+          left: 24,
+          zIndex: 1100,
+          width: 64,
+          height: 64,
+          boxShadow: '0 4px 20px rgba(46, 94, 170, 0.4)',
+          '&:hover': {
+            boxShadow: '0 6px 25px rgba(46, 94, 170, 0.5)',
+          }
+        }}
+      >
+        <CalendarMonthIcon sx={{ fontSize: 28 }} />
+      </Fab>
+    )}
+    </>
   );
 };
 

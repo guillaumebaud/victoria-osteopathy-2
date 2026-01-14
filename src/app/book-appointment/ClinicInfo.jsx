@@ -41,7 +41,7 @@ const ClinicInfo = () => {
           target="_blank"
           rel="noopener noreferrer"
           variant="contained"
-          size="large"
+          size="small"
           fullWidth
           endIcon={<ArrowOutwardIcon />}
         >
