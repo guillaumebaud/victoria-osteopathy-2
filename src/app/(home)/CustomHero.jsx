@@ -8,7 +8,7 @@ const CustomHero = () => {
   return (
     <section className="custom-hero">
       <div className="custom-hero-bg">
-        <Image src="/victoria-osteopathy/assets/prodslider.jpg" alt="Osteopathy Treatment" fill style={{ objectFit: 'cover' }} priority />
+        <Image src="/victoria-osteopathy/assets/prodslider.jpg" alt="Osteopathy Treatment" fill style={{ objectFit: 'cover' }} priority fetchPriority="high" />
         <div className="custom-hero-overlay"></div>
       </div>
       <div className="custom-hero-content">
