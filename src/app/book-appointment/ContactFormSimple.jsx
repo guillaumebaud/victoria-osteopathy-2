@@ -15,10 +15,12 @@ import {
   IconButton
 } from '@mui/material';
 import { Send as SendIcon, Close as CloseIcon, Lock as LockIcon } from '@mui/icons-material';
-import emailjs from '@emailjs/browser';
 
-// reCAPTCHA v3 Site Key - Replace with your actual key from Google reCAPTCHA console
+// reCAPTCHA v3 Site Key
 const RECAPTCHA_SITE_KEY = "6Lf6NlMpAAAAAMUJ1nZDUGbEYyZIHw7RtwfrGq-h";
+
+// Formspree Form ID - Replace with your actual form ID from Formspree
+const FORMSPREE_FORM_ID = "YOUR_FORMSPREE_FORM_ID";
 
 const ContactForm = forwardRef(({ className = "" }, ref) => {
   const [open, setOpen] = useState(false);
@@ -94,23 +96,25 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
         }
       }
 
-      // EmailJS configuration - you'll need to set these up
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id';
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id';
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      // Submit to Formspree
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          'g-recaptcha-response': recaptchaToken
+        })
+      });
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: 'Michael Dennis',
-        to_email: 'victoriaosteopathy@gmail.com',
-        recaptcha_token: recaptchaToken || 'not_available'
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
 
       showAlert('success', 'Thank you for your message! We will get back to you soon.');
       setFormData({
@@ -127,7 +131,7 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
         handleClose();
       }, 2000);
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Form submission error:', error);
       showAlert('error', 'Sorry, there was an error sending your message. Please try again.');
     } finally {
       setLoading(false);

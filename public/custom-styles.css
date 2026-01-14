@@ -484,7 +484,7 @@ h5,
 .about-osteopathy-hero,
 .about-us-hero {
   background: linear-gradient(rgba(46, 94, 170, 0.85), rgba(74, 144, 190, 0.85)),
-              url('/victoria-osteopathy/assets/prodslider.jpg');
+    url('/victoria-osteopathy/assets/prodslider.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -1205,7 +1205,7 @@ h5,
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.2);
   /* Increased from 0.4 to 0.6 for better contrast */
   z-index: 2;
 }

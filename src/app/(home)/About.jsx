@@ -1,7 +1,6 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import CountUp from "react-countup";
 import { Button } from "@mui/material";
 import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 const About = () => {
@@ -25,7 +24,7 @@ const About = () => {
                             <p className="sec-text">As a new resident of Victoria, Michael is excited to bring his passion for osteopathy to the community and is accepting new patients into his practice.
                             </p>
                         </div>
-                        <div className="checklist mb-35">
+                        <div className="checklist">
                             <ul>
                                 <li><span className="blue-square-icon"></span>Master of Practice Diploma in Osteopathic Manipulative Sciences
                                 </li>
@@ -34,13 +33,13 @@ const About = () => {
                         </div>
                         <div className="btn-group mt-60">
                             <Button
-                              component={Link}
-                              href="/about-us"
-                              variant="contained"
-                              size="medium"
-                              endIcon={<ArrowOutwardIcon />}
+                                component={Link}
+                                href="/about-us"
+                                variant="contained"
+                                size="medium"
+                                endIcon={<ArrowOutwardIcon />}
                             >
-                              Learn more about Michael
+                                Learn more about Michael
                             </Button>
                         </div>
                     </div>
