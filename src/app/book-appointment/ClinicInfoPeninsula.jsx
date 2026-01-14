@@ -30,9 +30,14 @@ const ClinicInfoPeninsula = () => {
       </div>
 
       <div className="appointment-button-container">
-        <button className="book-appointment-btn">
+        <a
+          href="https://peninsulaphysiotherapy.janeapp.com/locations/peninsula-physiotherapy/book#/staff_member/52"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="book-appointment-btn"
+        >
           Click here to book an appointment on the Peninsula Physiotherapy Clinic booking platform
-        </button>
+        </a>
       </div>
 
       <div className="clinic-note">

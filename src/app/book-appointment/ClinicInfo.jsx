@@ -33,9 +33,14 @@ const ClinicInfo = () => {
       </div>
 
       <div className="appointment-button-container">
-        <button className="book-appointment-btn">
+        <a
+          href="https://geometry.janeapp.com/#/staff_member/135"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="book-appointment-btn"
+        >
           Click here to book an appointment on the Geometry Integrated Health booking platform
-        </button>
+        </a>
       </div>
     </div>
   );
