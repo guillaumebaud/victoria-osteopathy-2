@@ -1,6 +1,8 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const AboutDetailed = () => {
   return (
@@ -69,12 +71,24 @@ const AboutDetailed = () => {
                 </p>
 
                 <div className="about-cta mt-4">
-                  <Link href="/pages/innerpage/contact" className="btn btn-primary me-3">
-                    Book an Appointment <i className="ri-arrow-right-up-line"></i>
-                  </Link>
-                  <Link href="/#pricing" className="btn btn-outline-primary">
+                  <Button
+                    component={Link}
+                    href="/book-appointment"
+                    variant="contained"
+                    size="medium"
+                    endIcon={<ArrowOutwardIcon />}
+                    sx={{ mr: 2 }}
+                  >
+                    Book an Appointment
+                  </Button>
+                  <Button
+                    component={Link}
+                    href="/#pricing"
+                    variant="outlined"
+                    size="medium"
+                  >
                     View Pricing
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>

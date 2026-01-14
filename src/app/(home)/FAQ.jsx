@@ -1,17 +1,9 @@
 "use client";
-import Image from "next/image";
 import { Accordion } from "react-bootstrap";
 
 const FAQ = () => {
   return (
-    <div className="faq-area-1 space-bottom overflow-hidden shape-mockup-wrap">
-      <div
-        className="faq-bg-shape1-1 shape-mockup d-lg-block d-none"
-        data-top="0"
-        data-left="0"
-      >
-        <Image src="/main-assets/img/bg/faq-bg-shape1-1.png" alt="" aria-hidden="true" width={400} height={400} />
-      </div>
+    <div className="faq-area-1 space-bottom overflow-hidden">
       <div className="container">
         <div className="title-area text-center">
           <h2 className="sec-title">Frequently Asked Questions</h2>

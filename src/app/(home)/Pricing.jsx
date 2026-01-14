@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const Pricing = () => {
     const [isActive, setIsActive] = useState(false);
@@ -11,7 +13,7 @@ const Pricing = () => {
                     <h2 className="sec-title">Available treatment options and pricing</h2>
                     <p className="sec-text">Book a consultation or treatment that fits your needs. All treatments are customized to address your individual health concerns and goals.</p>
                 </div>
-                <div className="col-12 home-two-pricing-button-align" style={{ display: 'none' }}>
+                <div className="col-12 home-two-pricing-button-align d-none">
                     <ul className="pricing-tabs nav nav-tabs" role={'tablist'}>
                         <li className="nav-item">
                             <button onClick={() => setIsActive(!isActive)} className={`nav-link ${isActive ? '' : 'active'}`} id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role={"tab"} aria-controls="monthly" aria-selected="true">Monthly Plan</button>
@@ -27,7 +29,7 @@ const Pricing = () => {
                     <div className="container">
                         <div className="row gy-4 justify-content-center">
                             <div className="col-xl-3 col-md-6">
-                                <div className="pricing-card" style={{ backgroundImage: "url('/main-assets/img/bg/pricing-card-bg1-1.png')" }}>
+                                <div className="pricing-card">
                                     <h4 className="pricing-card_title">Consultation</h4>
                                     <p className="pricing-card_text">15 minutes</p>
                                     <h4 className="pricing-card_price">
@@ -36,16 +38,21 @@ const Pricing = () => {
                                     <div className="pricing-card-details">
                                         <p>Book a free 15 minute consultation with Michael Dennis. During this consultation you can ask questions about osteopathy and find out if osteopathic treatment is right for you.</p>
                                     </div>
-                                    <Link href="/pages/innerpage/contact" className="btn-with-icon" tabIndex="-1">
+                                    <Button
+                                        component={Link}
+                                        href="/book-appointment"
+                                        variant="contained"
+                                        size="medium"
+                                        fullWidth
+                                        endIcon={<ArrowOutwardIcon />}
+                                        sx={{ mt: 2 }}
+                                    >
                                         Book Consultation
-                                        <span className="btn-icon">
-                                            <i className="ri-arrow-right-up-line"></i>
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-md-6">
-                                <div className="pricing-card" style={{ backgroundImage: "url('/main-assets/img/bg/pricing-card-bg1-1.png')" }}>
+                                <div className="pricing-card">
                                     <h4 className="pricing-card_title">Standard Treatment</h4>
                                     <p className="pricing-card_text">30 minutes</p>
                                     <h4 className="pricing-card_price">
@@ -54,16 +61,21 @@ const Pricing = () => {
                                     <div className="pricing-card-details">
                                         <p>Ideal for someone who is having ongoing osteopathic treatments, as part of their healthcare maintenance program.</p>
                                     </div>
-                                    <Link href="/pages/innerpage/contact" className="btn-with-icon" tabIndex="-1">
+                                    <Button
+                                        component={Link}
+                                        href="/book-appointment"
+                                        variant="contained"
+                                        size="medium"
+                                        fullWidth
+                                        endIcon={<ArrowOutwardIcon />}
+                                        sx={{ mt: 2 }}
+                                    >
                                         Book Appointment
-                                        <span className="btn-icon">
-                                            <i className="ri-arrow-right-up-line"></i>
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-md-6">
-                                <div className="pricing-card" style={{ backgroundImage: "url('/main-assets/img/bg/pricing-card-bg1-1.png')" }}>
+                                <div className="pricing-card">
                                     <h4 className="pricing-card_title">In Home Treatment</h4>
                                     <p className="pricing-card_text">60 minutes per session</p>
                                     <h4 className="pricing-card_price">
@@ -72,16 +84,21 @@ const Pricing = () => {
                                     <div className="pricing-card-details">
                                         <p>Available for anywhere in the Greater Victoria Region. Advance booking required. Please contact Michael directly at 905-933-8594 to arrange a mobile service call.</p>
                                     </div>
-                                    <Link href="/pages/innerpage/contact" className="btn-with-icon" tabIndex="-1">
+                                    <Button
+                                        component={Link}
+                                        href="/book-appointment"
+                                        variant="contained"
+                                        size="medium"
+                                        fullWidth
+                                        endIcon={<ArrowOutwardIcon />}
+                                        sx={{ mt: 2 }}
+                                    >
                                         Book Appointment
-                                        <span className="btn-icon">
-                                            <i className="ri-arrow-right-up-line"></i>
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-md-6">
-                                <div className="pricing-card" style={{ backgroundImage: "url('/main-assets/img/bg/pricing-card-bg1-1.png')" }}>
+                                <div className="pricing-card">
                                     <h4 className="pricing-card_title">Under 16</h4>
                                     <p className="pricing-card_text">30 minutes per session</p>
                                     <h4 className="pricing-card_price">
@@ -90,12 +107,17 @@ const Pricing = () => {
                                     <div className="pricing-card-details">
                                         <p>Ideal for someone under the age of 16, who is having osteopathic treatment as part of their healthcare maintenance program. Assessment and treatment will be focused on the individual needs of the child.</p>
                                     </div>
-                                    <Link href="/pages/innerpage/contact" className="btn-with-icon" tabIndex="-1">
+                                    <Button
+                                        component={Link}
+                                        href="/book-appointment"
+                                        variant="contained"
+                                        size="medium"
+                                        fullWidth
+                                        endIcon={<ArrowOutwardIcon />}
+                                        sx={{ mt: 2 }}
+                                    >
                                         Book Appointment
-                                        <span className="btn-icon">
-                                            <i className="ri-arrow-right-up-line"></i>
-                                        </span>
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                         </div>

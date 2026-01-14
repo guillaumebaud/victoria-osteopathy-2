@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import CountUp from "react-countup";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 const About = () => {
     return (
         <div className="about-area-2 space overflow-hidden shape-mockup-wrap" id="about-sec">
@@ -31,7 +33,15 @@ const About = () => {
                             </ul>
                         </div>
                         <div className="btn-group mt-60">
-                            <Link href="/about-us" className="btn style3">Learn more about Michael <i className="ri-arrow-right-up-line"></i></Link>
+                            <Button
+                              component={Link}
+                              href="/about-us"
+                              variant="contained"
+                              size="medium"
+                              endIcon={<ArrowOutwardIcon />}
+                            >
+                              Learn more about Michael
+                            </Button>
                         </div>
                     </div>
                 </div>

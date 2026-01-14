@@ -1,3 +1,10 @@
+import Script from "next/script";
+import "~/public/main-assets/css/fonts.css";
+import ThemeProvider from "./_components/ThemeProvider";
+
+// Google Analytics Measurement ID - Replace with your actual ID
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+
 const siteUrl = "https://victoriaosteopathy.ca/victoria-osteopathy";
 
 export const metadata = {
@@ -53,7 +60,6 @@ export const metadata = {
     },
   },
 };
-import "~/public/main-assets/css/fonts.css";
 
 // Schema.org structured data for SEO
 const jsonLd = {
@@ -126,13 +132,30 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        {children}
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

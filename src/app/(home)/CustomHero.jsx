@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const CustomHero = () => {
   return (
@@ -18,9 +20,15 @@ const CustomHero = () => {
             Osteopathy is a hands-on manual assessment and treatment approach that addresses the root causes of pain and dysfunction in your musculoskeletal system.
           </p>
           <div className="custom-hero-actions">
-            <Link href="/about-us" className="custom-hero-btn">
-              Learn More <i className="ri-arrow-right-up-line"></i>
-            </Link>
+            <Button
+              component={Link}
+              href="/about-us"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowOutwardIcon />}
+            >
+              Learn More
+            </Button>
           </div>
         </div>
       </div>

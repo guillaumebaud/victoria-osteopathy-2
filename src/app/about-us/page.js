@@ -24,7 +24,7 @@ import "~/public/custom-styles.css";
 
 export default function AboutPage() {
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div className="page-wrapper">
       <CustomHeader />
       <AboutDetailed />
       <TestimonialSection />

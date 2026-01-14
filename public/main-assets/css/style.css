@@ -164,9 +164,6 @@ a {
   transition: all ease 0.4s;
 }
 
-a:hover {
-  color: var(--title-color);
-}
 
 a:active,
 a:focus,

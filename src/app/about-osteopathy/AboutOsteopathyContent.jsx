@@ -1,6 +1,8 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const AboutOsteopathyContent = () => {
   return (
@@ -162,12 +164,24 @@ const AboutOsteopathyContent = () => {
                   Ready to discover how osteopathic manual therapy can help restore your body's natural balance and healing capacity?
                 </p>
                 <div className="cta-buttons">
-                  <Link href="/pages/innerpage/contact" className="btn btn-primary me-3">
-                    Book Your Consultation <i className="ri-arrow-right-up-line"></i>
-                  </Link>
-                  <Link href="/about-us" className="btn btn-outline-primary">
+                  <Button
+                    component={Link}
+                    href="/book-appointment"
+                    variant="contained"
+                    size="medium"
+                    endIcon={<ArrowOutwardIcon />}
+                    sx={{ mr: 2 }}
+                  >
+                    Book Your Consultation
+                  </Button>
+                  <Button
+                    component={Link}
+                    href="/about-us"
+                    variant="outlined"
+                    size="medium"
+                  >
                     Meet Your Practitioner
-                  </Link>
+                  </Button>
                 </div>
               </div>
             </div>

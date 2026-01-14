@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Button } from "@mui/material";
 
 const CustomHeader = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -43,9 +44,15 @@ const CustomHeader = () => {
         </nav>
 
         {/* CTA Button */}
-        <Link href="/book-appointment" className="simple-cta desktop-only">
+        <Button
+          component={Link}
+          href="/book-appointment"
+          variant="contained"
+          size="medium"
+          className="desktop-only"
+        >
           Book an appointment
-        </Link>
+        </Button>
 
         {/* Mobile Menu Button */}
         <button
@@ -67,9 +74,17 @@ const CustomHeader = () => {
           <li><Link href="/#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link></li>
           <li><Link href="/book-appointment" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
           <li>
-            <Link href="/book-appointment" className="mobile-cta" onClick={() => setIsMobileMenuOpen(false)}>
+            <Button
+              component={Link}
+              href="/book-appointment"
+              variant="contained"
+              size="large"
+              fullWidth
+              onClick={() => setIsMobileMenuOpen(false)}
+              sx={{ mt: 1 }}
+            >
               Book an appointment
-            </Link>
+            </Button>
           </li>
         </ul>
       </div>

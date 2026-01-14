@@ -1,5 +1,7 @@
 "use client";
 import React from 'react';
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const ClinicInfoPeninsula = () => {
   return (
@@ -30,14 +32,18 @@ const ClinicInfoPeninsula = () => {
       </div>
 
       <div className="appointment-button-container">
-        <a
+        <Button
+          component="a"
           href="https://peninsulaphysiotherapy.janeapp.com/locations/peninsula-physiotherapy/book#/staff_member/52"
           target="_blank"
           rel="noopener noreferrer"
-          className="book-appointment-btn"
+          variant="contained"
+          size="large"
+          fullWidth
+          endIcon={<ArrowOutwardIcon />}
         >
           Click here to book an appointment on the Peninsula Physiotherapy Clinic booking platform
-        </a>
+        </Button>
       </div>
 
       <div className="clinic-note">

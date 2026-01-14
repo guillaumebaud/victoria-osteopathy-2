@@ -2,6 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from "@mui/material";
+import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
 
 const TestimonialSection = () => {
   const [expandedReviews, setExpandedReviews] = useState({});
@@ -118,12 +120,14 @@ const TestimonialSection = () => {
                       "{isExpanded ? testimonial.text : testimonial.shortText}"
                     </p>
                     {shouldTruncate && (
-                      <button
-                        className="read-more-btn"
+                      <Button
+                        variant="text"
+                        size="small"
                         onClick={() => toggleExpanded(testimonial.id)}
+                        sx={{ p: 0, minWidth: 'auto' }}
                       >
                         {isExpanded ? 'Read Less' : 'Read More'}
-                      </button>
+                      </Button>
                     )}
                   </div>
                   <div className="testimonial-author">
@@ -159,9 +163,15 @@ const TestimonialSection = () => {
           <div className="testimonial-cta">
             <h4 className="mb-3">Ready to Experience the Difference?</h4>
             <p className="mb-4">Join our satisfied patients and discover how osteopathy can help you achieve optimal health.</p>
-            <Link href="/pages/innerpage/contact" className="btn btn-primary">
-              Book Your Consultation <i className="ri-arrow-right-up-line"></i>
-            </Link>
+            <Button
+              component={Link}
+              href="/book-appointment"
+              variant="contained"
+              size="medium"
+              endIcon={<ArrowOutwardIcon />}
+            >
+              Book Your Consultation
+            </Button>
           </div>
         </div>
       </div>

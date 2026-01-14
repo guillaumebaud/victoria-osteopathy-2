@@ -23,7 +23,7 @@ import "~/public/custom-styles.css";
 
 export default function AboutOsteopathyPage() {
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div className="page-wrapper">
       <CustomHeader />
       <AboutOsteopathyContent />
       <CustomFooter />

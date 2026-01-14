@@ -23,9 +23,10 @@ const CustomFooter = () => {
               <h5 className="custom-footer-title">Quick Links</h5>
               <ul className="custom-footer-links">
                 <li><Link href="/about-us">About Michael</Link></li>
-                <li><Link href="/pages/innerpage/service">About Osteopathy</Link></li>
+                <li><Link href="/about-osteopathy">About Osteopathy</Link></li>
                 <li><Link href="/#pricing">Pricing</Link></li>
-                <li><Link href="/pages/innerpage/contact">Contact</Link></li>
+                <li><Link href="/book-appointment">Contact</Link></li>
+                <li><Link href="/privacy-policy">Privacy Policy</Link></li>
               </ul>
             </div>
 
@@ -51,7 +52,7 @@ const CustomFooter = () => {
         <div className="custom-footer-bottom">
           <div className="row">
             <div className="col-md-6">
-              <p className="custom-copyright">© 2025 Victoria Osteopathy. All rights reserved.</p>
+              <p className="custom-copyright">© 2026 Victoria Osteopathy. All rights reserved.</p>
             </div>
             <div className="col-md-6 text-md-end">
               <p className="custom-footer-note">

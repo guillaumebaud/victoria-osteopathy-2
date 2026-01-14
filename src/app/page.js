@@ -16,7 +16,7 @@ import "~/public/custom-styles.css";
 
 export default function HomePage() {
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div className="page-wrapper">
       <CustomHeader />
       <CustomHero />
       <About />
