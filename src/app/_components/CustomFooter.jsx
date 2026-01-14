@@ -1,5 +1,6 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 
 const CustomFooter = () => {
   return (
@@ -10,7 +11,7 @@ const CustomFooter = () => {
             {/* Logo and Practice Info */}
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
               <div className="custom-footer-logo">
-                <img src="/victoria-osteopathy/assets/footerlogo.png" alt="Victoria Osteopathy" />
+                <Image src="/victoria-osteopathy/assets/footerlogo.png" alt="Victoria Osteopathy" width={150} height={50} />
               </div>
               <p className="custom-footer-text">
                 Professional osteopathic care in Victoria, BC. Helping you achieve optimal health and wellness.

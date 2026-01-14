@@ -47,8 +47,9 @@ src/
 │   └── paths.js           # Path utilities
 public/
 ├── main-assets/           # CSS, fonts, images for main site
-├── landing-assets/        # Landing page assets
-└── victoria-osteopathy/   # Clinic-specific assets
+├── victoria-osteopathy/   # Clinic-specific assets (logo, photos)
+├── robots.txt             # Search engine crawling rules
+└── sitemap.xml            # Sitemap for search engines
 ```
 
 ## Pages
@@ -57,6 +58,39 @@ public/
 - `/about-us` - About the clinic and testimonials
 - `/about-osteopathy` - Information about osteopathic treatment
 - `/book-appointment` - Clinic locations, maps, and contact form
+
+## SEO
+
+The site is optimized for search engines with the following features:
+
+### Static Export
+Built as a fully static site (`output: 'export'`) for fast load times and better SEO performance. No server-side rendering required.
+
+### Meta Tags
+- **Page-specific titles and descriptions** - Each page has unique metadata defined via Next.js `metadata` exports
+- **Open Graph tags** - Proper previews when shared on Facebook, LinkedIn, etc.
+- **Twitter cards** - Large image cards for Twitter/X sharing
+- **Keywords and author** - Relevant keywords and authorship defined
+
+### Schema.org Structured Data
+JSON-LD structured data in `layout.js` includes:
+- Business type (`HealthAndBeautyBusiness`)
+- Both clinic locations with addresses
+- Opening hours for each location
+- Service types offered
+- Practitioner information
+
+### Sitemap & Robots
+- `public/sitemap.xml` - Lists all pages with priorities and change frequencies
+- `public/robots.txt` - Allows all crawlers, references sitemap
+
+### Images
+All images have descriptive `alt` attributes. Decorative images are marked with `aria-hidden="true"`.
+
+### Updating SEO
+- **Site URL:** Update `siteUrl` in `layout.js` and URLs in `sitemap.xml` if the domain changes
+- **Page metadata:** Edit the `metadata` export at the top of each page file
+- **Schema data:** Edit the `jsonLd` object in `layout.js`
 
 ## Deployment
 

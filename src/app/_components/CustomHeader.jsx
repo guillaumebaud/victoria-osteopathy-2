@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const CustomHeader = () => {
@@ -26,7 +27,7 @@ const CustomHeader = () => {
         {/* Logo */}
         <div className="simple-logo">
           <Link href="/">
-            <img src="/victoria-osteopathy/assets/logo.jpg" alt="Victoria Osteopathy" />
+            <Image src="/victoria-osteopathy/assets/logo.jpg" alt="Victoria Osteopathy" width={180} height={60} priority />
           </Link>
         </div>
 

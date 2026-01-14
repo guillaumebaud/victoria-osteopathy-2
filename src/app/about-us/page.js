@@ -1,3 +1,12 @@
+export const metadata = {
+  title: "About Michael Dennis",
+  description: "Meet Michael Dennis, Osteopathic Manual Practitioner in Victoria, BC. Learn about his training, approach to treatment, and commitment to helping patients achieve optimal health.",
+  openGraph: {
+    title: "About Michael Dennis | Victoria Osteopathy",
+    description: "Meet Michael Dennis, Osteopathic Manual Practitioner in Victoria, BC.",
+  },
+};
+
 import CustomHeader from "~/app/_components/CustomHeader";
 import CustomFooter from "~/app/_components/CustomFooter";
 import AboutDetailed from "./AboutDetailed";

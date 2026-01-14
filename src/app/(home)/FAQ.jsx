@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { Accordion } from "react-bootstrap";
 
 const FAQ = () => {
@@ -10,7 +10,7 @@ const FAQ = () => {
         data-top="0"
         data-left="0"
       >
-        <img src="/main-assets/img/bg/faq-bg-shape1-1.png" alt="img" />
+        <Image src="/main-assets/img/bg/faq-bg-shape1-1.png" alt="" aria-hidden="true" width={400} height={400} />
       </div>
       <div className="container">
         <div className="title-area text-center">

@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 const CustomHero = () => {
   return (
     <section className="custom-hero">
       <div className="custom-hero-bg">
-        <img src="/victoria-osteopathy/assets/prodslider.jpg" alt="Osteopathy Treatment" />
+        <Image src="/victoria-osteopathy/assets/prodslider.jpg" alt="Osteopathy Treatment" fill style={{ objectFit: 'cover' }} priority />
         <div className="custom-hero-overlay"></div>
       </div>
       <div className="custom-hero-content">

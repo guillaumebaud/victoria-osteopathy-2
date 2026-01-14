@@ -1,5 +1,6 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 
 const AboutOsteopathyContent = () => {
   return (
@@ -134,9 +135,11 @@ const AboutOsteopathyContent = () => {
             </div>
             <div className="col-lg-5">
               <div className="foundation-image">
-                <img
+                <Image
                   src="/victoria-osteopathy/assets/andrew-taylor.jpg"
                   alt="Dr. Andrew Taylor Still - Founder of Osteopathy"
+                  width={400}
+                  height={500}
                   className="img-fluid rounded shadow"
                 />
                 <div className="image-caption">

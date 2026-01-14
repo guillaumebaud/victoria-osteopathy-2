@@ -1,0 +1,6 @@
+# robots.txt for Victoria Osteopathy
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://victoriaosteopathy.ca/victoria-osteopathy/sitemap.xml

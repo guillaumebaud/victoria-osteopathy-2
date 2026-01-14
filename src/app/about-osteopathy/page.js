@@ -1,3 +1,12 @@
+export const metadata = {
+  title: "What is Osteopathy?",
+  description: "Learn about osteopathy, a holistic approach to healthcare founded by Dr. Andrew Taylor Still. Discover how manual osteopathic treatment can help with pain, mobility, and overall wellness.",
+  openGraph: {
+    title: "What is Osteopathy? | Victoria Osteopathy",
+    description: "Learn about osteopathy, a holistic approach to healthcare using manual therapy techniques.",
+  },
+};
+
 import CustomHeader from "~/app/_components/CustomHeader";
 import CustomFooter from "~/app/_components/CustomFooter";
 import AboutOsteopathyContent from "./AboutOsteopathyContent";

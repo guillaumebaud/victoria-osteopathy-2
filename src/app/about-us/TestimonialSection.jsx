@@ -1,5 +1,6 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const TestimonialSection = () => {
@@ -129,9 +130,11 @@ const TestimonialSection = () => {
                     <div className="author-info">
                       <div className="author-photo">
                         {testimonial.photo ? (
-                          <img
+                          <Image
                             src={testimonial.photo}
                             alt={`${testimonial.name} photo`}
+                            width={60}
+                            height={60}
                             onError={handleImageError}
                           />
                         ) : (

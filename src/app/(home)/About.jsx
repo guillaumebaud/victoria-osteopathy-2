@@ -1,5 +1,6 @@
 'use client';
 import Link from "next/link";
+import Image from "next/image";
 import CountUp from "react-countup";
 const About = () => {
     return (
@@ -9,7 +10,7 @@ const About = () => {
                     <div className="col-xl-6">
                         <div className="about-thumb2 mb-60 mb-xl-0">
                             <div className="about-thumb">
-                                <img src="/victoria-osteopathy/assets/michael_dennis_portrait.jpg" alt="Michael Dennis - Osteopathic Manual Practitioner" />
+                                <Image src="/victoria-osteopathy/assets/michael_dennis_portrait.jpg" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} />
                             </div>
                         </div>
                     </div>
