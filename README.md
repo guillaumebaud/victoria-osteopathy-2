@@ -26,7 +26,8 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start development server with hot reload |
-| `npm run build` | Create production build |
+| `npm run build` | Create production build with CSS purging |
+| `npm run build:no-purge` | Create production build without CSS purging |
 | `npm run start` | Run production server |
 | `npm run lint` | Run ESLint |
 
@@ -66,5 +67,7 @@ npm run build
 ```
 
 This creates an `out/` folder containing all the static HTML, CSS, JS, and assets. Upload the contents of this folder to any web server or static hosting service.
+
+The build process includes PurgeCSS which automatically removes unused CSS, reducing the stylesheet size by ~50%.
 
 **Note:** The site is configured with a base path of `/victoria-osteopathy`, so it expects to be served from that subdirectory (e.g., `https://yourdomain.com/victoria-osteopathy/`).
