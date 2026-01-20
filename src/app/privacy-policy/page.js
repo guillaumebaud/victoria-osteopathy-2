@@ -24,8 +24,8 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="page-wrapper">
       <CustomHeader />
-
-      {/* Hero Section */}
+      <main>
+        {/* Hero Section */}
       <div className="about-us-hero space-top space-bottom">
         <div className="container">
           <div className="row justify-content-center text-center">
@@ -152,7 +152,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </section>
-
+      </main>
       <CustomFooter />
     </div>
   );

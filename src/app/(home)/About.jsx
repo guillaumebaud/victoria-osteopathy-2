@@ -11,7 +11,7 @@ const About = () => {
                     <div className="col-xl-6">
                         <div className="about-thumb2 mb-60 mb-xl-0">
                             <div className="about-thumb">
-                                <Image src="/victoria-osteopathy/assets/michael_dennis_portrait.jpg" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} />
+                                <Image src="/victoria-osteopathy/assets/michael_dennis_portrait.webp" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} />
                             </div>
                         </div>
                     </div>

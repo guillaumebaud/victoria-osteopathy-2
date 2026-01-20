@@ -27,7 +27,7 @@ const AboutDetailed = () => {
           <div className="row align-items-start mb-5">
             <div className="col-lg-6 mb-4 mb-lg-0">
               <div className="about-detailed-image">
-                <Image src="/victoria-osteopathy/assets/about_portrait.jpg" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} className="img-fluid rounded" />
+                <Image src="/victoria-osteopathy/assets/about_portrait.webp" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} className="img-fluid rounded" />
                 <div className="credentials-overlay">
                   <div className="credentials-content">
                     <div className="credentials-icon">
@@ -43,8 +43,7 @@ const AboutDetailed = () => {
             </div>
             <div className="col-lg-6">
               <div className="about-detailed-content">
-                <span className="sub-title">Meet Your Practitioner</span>
-                <h1 className="sec-title mb-4">Michael Dennis</h1>
+                <h1 className="sec-title">Michael Dennis</h1>
                 <h3 className="about-subtitle mb-3">Osteopathic Manual Practitioner <br />(M. OMSc)</h3>
                 <p className="about-text">
                   As a graduate of Hamilton's prestigious Canadian Academy of Osteopathy, Michael spent four years earning his Master of Practice Diploma in Osteopathic Manipulative sciences (M.OMSc), and is currently a member of OsteopathyBC. An extensive and comprehensive knowledge of anatomy and physiology is the cornerstone to his application of osteopathic principles and treatments for clients.

@@ -32,7 +32,7 @@ const CustomHeader = () => {
         {/* Logo */}
         <div className="simple-logo">
           <Link href="/">
-            <Image src="/victoria-osteopathy/assets/logo.jpg" alt="Victoria Osteopathy" width={180} height={60} priority />
+            <Image src="/victoria-osteopathy/assets/logo.webp" alt="Victoria Osteopathy" width={180} height={60} priority />
           </Link>
         </div>
 
@@ -63,6 +63,8 @@ const CustomHeader = () => {
         <button
           className="mobile-toggle"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMobileMenuOpen}
         >
           <span></span>
           <span></span>

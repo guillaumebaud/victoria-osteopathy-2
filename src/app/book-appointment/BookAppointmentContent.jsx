@@ -20,8 +20,8 @@ export default function BookAppointmentContent() {
   return (
     <>
       <CustomHeader />
-
-      {/* Hero Section */}
+      <main>
+        {/* Hero Section */}
       <div className="about-us-hero space-top space-bottom">
         <div className="container">
           <div className="row justify-content-center text-center">
@@ -84,7 +84,7 @@ export default function BookAppointmentContent() {
           </div>
         </div>
       </section>
-
+      </main>
       <CustomFooter />
     </>
   );

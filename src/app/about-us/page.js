@@ -26,8 +26,10 @@ export default function AboutPage() {
   return (
     <div className="page-wrapper">
       <CustomHeader />
-      <AboutDetailed />
-      <TestimonialSection />
+      <main>
+        <AboutDetailed />
+        <TestimonialSection />
+      </main>
       <CustomFooter />
     </div>
   );

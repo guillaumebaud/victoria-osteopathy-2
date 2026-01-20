@@ -133,11 +133,25 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Preload LCP hero image for faster discovery */}
-        <link rel="preload" as="image" href="/victoria-osteopathy/assets/prodslider.jpg" fetchPriority="high" />
-        {/* Font preconnects and loading - moved from CSS @imports to avoid request chains */}
+        <link rel="preload" as="image" href="/victoria-osteopathy/assets/prodslider.webp" fetchPriority="high" type="image/webp" />
+        {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" />
+        {/* Google Fonts - non-render-blocking with preload + swap */}
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+          media="print"
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

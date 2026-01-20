@@ -1,7 +1,7 @@
 import About from "~/app/(home)/About";
 import FAQ from "~/app/(home)/FAQ";
 import CustomHero from "~/app/(home)/CustomHero";
-import Pricing from "~/app/(home)/Pricing";
+import LocationCards from "~/app/(home)/LocationCards";
 import CustomFooter from "~/app/_components/CustomFooter";
 import CustomHeader from "~/app/_components/CustomHeader";
 
@@ -18,10 +18,12 @@ export default function HomePage() {
   return (
     <div className="page-wrapper">
       <CustomHeader />
-      <CustomHero />
-      <About />
-      <Pricing />
-      <FAQ />
+      <main>
+        <CustomHero />
+        <About />
+        <LocationCards />
+        <FAQ />
+      </main>
       <CustomFooter />
     </div>
   );

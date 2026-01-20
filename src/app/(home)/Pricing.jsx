@@ -30,7 +30,7 @@ const Pricing = () => {
                         <div className="row gy-4 justify-content-center">
                             <div className="col-xl-3 col-md-6">
                                 <div className="pricing-card">
-                                    <h4 className="pricing-card_title">Consultation</h4>
+                                    <h3 className="pricing-card_title">Consultation</h3>
                                     <p className="pricing-card_text">15 minutes</p>
                                     <h4 className="pricing-card_price">
                                         <span className="pricing-card_currency">FREE</span>
@@ -53,7 +53,7 @@ const Pricing = () => {
                             </div>
                             <div className="col-xl-3 col-md-6">
                                 <div className="pricing-card">
-                                    <h4 className="pricing-card_title">Standard Treatment</h4>
+                                    <h3 className="pricing-card_title">Standard Treatment</h3>
                                     <p className="pricing-card_text">30 minutes</p>
                                     <h4 className="pricing-card_price">
                                         <span className="pricing-card_currency">$</span>90<span className="pricing-card_duration">.00</span>
@@ -76,7 +76,7 @@ const Pricing = () => {
                             </div>
                             <div className="col-xl-3 col-md-6">
                                 <div className="pricing-card">
-                                    <h4 className="pricing-card_title">In Home Treatment</h4>
+                                    <h3 className="pricing-card_title">In Home Treatment</h3>
                                     <p className="pricing-card_text">60 minutes per session</p>
                                     <h4 className="pricing-card_price">
                                         <span className="pricing-card_currency">$</span>125<span className="pricing-card_duration">.00</span>
@@ -99,7 +99,7 @@ const Pricing = () => {
                             </div>
                             <div className="col-xl-3 col-md-6">
                                 <div className="pricing-card">
-                                    <h4 className="pricing-card_title">Under 16</h4>
+                                    <h3 className="pricing-card_title">Under 16</h3>
                                     <p className="pricing-card_text">30 minutes per session</p>
                                     <h4 className="pricing-card_price">
                                         <span className="pricing-card_currency">$</span>50<span className="pricing-card_duration">.00</span>

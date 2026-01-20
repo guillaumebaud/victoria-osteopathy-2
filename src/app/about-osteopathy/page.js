@@ -25,7 +25,9 @@ export default function AboutOsteopathyPage() {
   return (
     <div className="page-wrapper">
       <CustomHeader />
-      <AboutOsteopathyContent />
+      <main>
+        <AboutOsteopathyContent />
+      </main>
       <CustomFooter />
     </div>
   );

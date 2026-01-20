@@ -11,7 +11,7 @@ const CustomFooter = () => {
             {/* Logo and Practice Info */}
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
               <div className="custom-footer-logo">
-                <Image src="/victoria-osteopathy/assets/footerlogo.png" alt="Victoria Osteopathy" width={150} height={50} />
+                <Image src="/victoria-osteopathy/assets/footerlogo.webp" alt="Victoria Osteopathy" width={150} height={50} />
               </div>
               <p className="custom-footer-text">
                 Professional osteopathic care in Victoria, BC. Helping you achieve optimal health and wellness.
@@ -20,7 +20,7 @@ const CustomFooter = () => {
 
             {/* Quick Links */}
             <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
-              <h5 className="custom-footer-title">Quick Links</h5>
+              <h2 className="custom-footer-title">Quick Links</h2>
               <ul className="custom-footer-links">
                 <li><Link href="/about-us">About Michael</Link></li>
                 <li><Link href="/about-osteopathy">About Osteopathy</Link></li>
@@ -34,7 +34,7 @@ const CustomFooter = () => {
             <div className="col-lg-5 col-md-12">
               <div className="d-flex justify-content-between align-items-start flex-wrap gap-4">
                 <div>
-                  <h5 className="custom-footer-title">Contact Information</h5>
+                  <h2 className="custom-footer-title">Contact Information</h2>
                   <div className="custom-footer-contact">
                     <div className="contact-item">
                       <span>905-933-8594</span>
