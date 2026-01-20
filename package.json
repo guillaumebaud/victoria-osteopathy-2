@@ -7,7 +7,8 @@
     "build": "next build && node scripts/purgecss.js",
     "build:no-purge": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "cross-env EXPORT=true next build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -19,6 +20,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "eslint": "^9.18.0",
     "eslint-config-next": "^15.1.0",
     "glob": "^11.0.0",
