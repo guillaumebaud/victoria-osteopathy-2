@@ -138,7 +138,7 @@ const AboutOsteopathyContent = () => {
             <div className="col-lg-5">
               <div className="foundation-image">
                 <Image
-                  src="/victoria-osteopathy/assets/andrew-taylor.jpg"
+                  src="/assets/andrew-taylor.jpg"
                   alt="Dr. Andrew Taylor Still - Founder of Osteopathy"
                   width={400}
                   height={500}

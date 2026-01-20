@@ -27,7 +27,7 @@ const AboutDetailed = () => {
           <div className="row align-items-start mb-5">
             <div className="col-lg-6 mb-4 mb-lg-0">
               <div className="about-detailed-image">
-                <Image src="/victoria-osteopathy/assets/about_portrait.webp" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} className="img-fluid rounded" />
+                <Image src="/assets/about_portrait.webp" alt="Michael Dennis - Osteopathic Manual Practitioner" width={500} height={600} className="img-fluid rounded" />
                 <div className="credentials-overlay">
                   <div className="credentials-content">
                     <div className="credentials-icon">

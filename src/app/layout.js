@@ -19,11 +19,11 @@ export const metadata = {
   creator: "Victoria Osteopathy",
   icons: {
     icon: [
-      { rel: "icon", type: "image/x-icon", url: "/victoria-osteopathy/assets/favicon.ico" },
-      { rel: "icon", type: "image/png", sizes: "32x32", url: "/victoria-osteopathy/assets/favicon.ico" },
+      { rel: "icon", type: "image/x-icon", url: "/assets/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", url: "/assets/favicon.ico" },
     ],
     apple: [
-      { rel: "apple-touch-icon", sizes: "180x180", url: "/victoria-osteopathy/assets/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", url: "/assets/favicon.ico" },
     ],
   },
   openGraph: {
@@ -35,7 +35,7 @@ export const metadata = {
     description: "Professional osteopathic care in Victoria, BC. Manual therapy, pain management, sports injury treatment & holistic wellness with Michael Dennis.",
     images: [
       {
-        url: "/victoria-osteopathy/assets/prodslider.jpg",
+        url: "/assets/prodslider.jpg",
         width: 1200,
         height: 630,
         alt: "Victoria Osteopathy - Professional Manual Therapy",
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Victoria Osteopathy | Manual Osteopathic Treatment",
     description: "Professional osteopathic care in Victoria, BC with Michael Dennis.",
-    images: ["/victoria-osteopathy/assets/prodslider.jpg"],
+    images: ["/assets/prodslider.jpg"],
   },
   robots: {
     index: true,
@@ -69,8 +69,8 @@ const jsonLd = {
   name: "Victoria Osteopathy",
   description: "Professional osteopathic care in Victoria, BC. Manual therapy, pain management, sports injury treatment & holistic wellness.",
   url: "https://victoriaosteopathy.ca/victoria-osteopathy/",
-  logo: "https://victoriaosteopathy.ca/victoria-osteopathy/assets/logo.jpg",
-  image: "https://victoriaosteopathy.ca/victoria-osteopathy/assets/prodslider.jpg",
+  logo: "https://victoriaosteopathy.ca/assets/logo.jpg",
+  image: "https://victoriaosteopathy.ca/assets/prodslider.jpg",
   priceRange: "$$",
   founder: {
     "@type": "Person",
@@ -133,7 +133,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         {/* Preload LCP hero image for faster discovery */}
-        <link rel="preload" as="image" href="/victoria-osteopathy/assets/prodslider.webp" fetchPriority="high" type="image/webp" />
+        <link rel="preload" as="image" href="/assets/prodslider.webp" fetchPriority="high" type="image/webp" />
         {/* Font preconnects */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

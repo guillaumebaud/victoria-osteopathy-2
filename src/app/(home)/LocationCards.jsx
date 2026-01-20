@@ -107,7 +107,7 @@ const LocationCards = () => {
                 <div className="janeapp-branding mt-4">
                   <div className="janeapp-info">
                     <Image
-                      src="/victoria-osteopathy/assets/janeapp_logo.png"
+                      src="/assets/janeapp_logo.png"
                       alt="JaneApp Logo"
                       width={80}
                       height={24}
@@ -200,7 +200,7 @@ const LocationCards = () => {
                 <div className="janeapp-branding mt-4">
                   <div className="janeapp-info">
                     <Image
-                      src="/victoria-osteopathy/assets/janeapp_logo.png"
+                      src="/assets/janeapp_logo.png"
                       alt="JaneApp Logo"
                       width={80}
                       height={24}

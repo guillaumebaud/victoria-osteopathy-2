@@ -32,7 +32,7 @@ const CustomHeader = () => {
         {/* Logo */}
         <div className="simple-logo">
           <Link href="/">
-            <Image src="/victoria-osteopathy/assets/logo.webp" alt="Victoria Osteopathy" width={180} height={60} priority />
+            <Image src="/assets/logo.webp" alt="Victoria Osteopathy" width={180} height={60} priority />
           </Link>
         </div>
 

@@ -31,7 +31,7 @@ const TestimonialSection = () => {
       id: 3,
       name: "Tiffany Boucher",
       location: "Victoria, BC",
-      photo: "/victoria-osteopathy/assets/tiffany_boucher.png",
+      photo: "/assets/tiffany_boucher.png",
       text: "Michael is amazing! I recommend him to anyone I get the chance to. He has made a huge difference to my chronic pain I've been dealing with for a long time! His hands are made to do this! He is super knowledgeable and has been awesome to see. He definitely knows what he is doing!",
       shortText: "Michael is amazing! I recommend him to anyone I get the chance to. He has made a huge difference to my chronic pain I've been dealing with for a long time! His hands are made to do this!",
       rating: 5
@@ -40,7 +40,7 @@ const TestimonialSection = () => {
       id: 4,
       name: "Kirk Clyne",
       location: "Victoria, BC",
-      photo: "/victoria-osteopathy/assets/Kirk_Clyne.png",
+      photo: "/assets/Kirk_Clyne.png",
       text: "After decades of chronic headaches from neck and shoulder tension, I went a full month headache-free after just four short visits with Mike — no homework or exercises. It's been life-changing. Mike's approach is gentle, grounded in medical science (not \"woo\"), and somehow he still credits me for the healing. He's knowledgeable, thorough in his explanations, and clearly passionate about what he does. If you're dealing with chronic back, neck, or shoulder pain, Mike is an undiscovered gem.",
       shortText: "After decades of chronic headaches from neck and shoulder tension, I went a full month headache-free after just four short visits with Mike — no homework or exercises. It's been life-changing...",
       rating: 5
@@ -49,7 +49,7 @@ const TestimonialSection = () => {
       id: 5,
       name: "Iwan Beynon",
       location: "Victoria, BC",
-      photo: "/victoria-osteopathy/assets/Iwan_beynon.png",
+      photo: "/assets/Iwan_beynon.png",
       text: "Michael is a true professional. His ability to tailor the treatment and quickly identify the underlying issue truly sets him apart. Extremely reliable and effective treatment- highly recommended!",
       shortText: "Michael is a true professional. His ability to tailor the treatment and quickly identify the underlying issue truly sets him apart. Extremely reliable and effective treatment- highly recommended!",
       rating: 5
@@ -58,7 +58,7 @@ const TestimonialSection = () => {
       id: 6,
       name: "Alexandra Berg",
       location: "Victoria, BC",
-      photo: "/victoria-osteopathy/assets/alexandra_berg.png",
+      photo: "/assets/alexandra_berg.png",
       text: "Michael is one of the best osteopaths I've worked with! His treatments are always well targeted and effective, and I've seen a huge improvement with some long-term issues in a short amount of time. Highly recommended!",
       shortText: "Michael is one of the best osteopaths I've worked with! His treatments are always well targeted and effective, and I've seen a huge improvement with some long-term issues in a short amount of time.",
       rating: 5

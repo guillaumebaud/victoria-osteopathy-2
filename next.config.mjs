@@ -10,7 +10,7 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
     devIndicators: false,
-    
+
     // Only add these settings when doing static export for GoDaddy
     ...(isExport && {
         output: 'export',
@@ -20,7 +20,7 @@ const nextConfig = {
             unoptimized: true
         },
     }),
-    
+
     // For Vercel deployment, allow image optimization
     ...(!isExport && {
         images: {
