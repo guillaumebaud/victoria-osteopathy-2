@@ -186,11 +186,8 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
               <Typography variant="h6" sx={{ mb: 2 }}>
                 Thank you for your message!
               </Typography>
-              <Typography variant="body1" sx={{ color: '#666', mb: 3 }}>
+              <Typography variant="body1" sx={{ color: '#666' }}>
                 We have received your inquiry and our osteopathic practitioner will get back to you as soon as possible.
-              </Typography>
-              <Typography variant="body2" sx={{ color: '#888' }}>
-                A confirmation email has been sent to your inbox.
               </Typography>
             </Box>
           ) : (

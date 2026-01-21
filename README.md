@@ -95,8 +95,7 @@ The contact form on the Book Appointment page uses a secure server-side flow:
 3. Form submits to `/api/contact` with the token
 4. Server verifies the reCAPTCHA token with Google (rejects scores < 0.5)
 5. Server sends notification email to the clinic via Resend
-6. Server sends confirmation email to the user via Resend
-7. User sees success message in the dialog
+6. User sees success message in the dialog
 
 **Security features:**
 - reCAPTCHA verification happens server-side (secret key never exposed)

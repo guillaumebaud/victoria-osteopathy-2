@@ -71,37 +71,6 @@ export async function POST(request) {
       );
     }
 
-    // Send confirmation email to the user
-    try {
-      await resend.emails.send({
-        from: 'Victoria Osteopathy <onboarding@resend.dev>',
-        to: email,
-        subject: 'We received your message - Victoria Osteopathy',
-        html: `
-          <h2>Thank you for contacting Victoria Osteopathy!</h2>
-          <p>Hi ${name},</p>
-          <p>We have received your contact request and appreciate you reaching out to us.</p>
-          <p>Our osteopathic practitioner will review your message and get back to you as soon as possible.</p>
-          <br>
-          <p><strong>Your message:</strong></p>
-          <p style="padding: 15px; background-color: #f5f5f5; border-radius: 5px;">
-            ${message ? message.replace(/\n/g, '<br>') : 'No message provided'}
-          </p>
-          <br>
-          <p>If you have any urgent questions, feel free to call us or reply to this email.</p>
-          <p>Thank you for choosing Victoria Osteopathy!</p>
-          <br>
-          <p style="color: #666;">
-            Best regards,<br>
-            Victoria Osteopathy
-          </p>
-        `,
-      });
-    } catch (confirmationError) {
-      // Log but don't fail the request if confirmation email fails
-      console.error('Confirmation email error:', confirmationError);
-    }
-
     return NextResponse.json({ success: true, id: data.id });
   } catch (error) {
     console.error('Contact form error:', error);
