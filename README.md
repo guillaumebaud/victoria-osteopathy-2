@@ -6,7 +6,8 @@ Website for Victoria Osteopathy - a manual osteopathic treatment clinic in Victo
 
 - **Framework:** Next.js 14 (App Router)
 - **UI:** React 18, Bootstrap 5, Material UI
-- **Contact Form:** EmailJS
+- **Contact Form:** Resend + Google reCAPTCHA v3
+- **Hosting:** Vercel
 - **Other:** Slick Carousel, Magnific Popup, Isotope Layout
 
 ## Getting Started
@@ -20,6 +21,29 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+## Environment Variables
+
+This project requires environment variables for the contact form to work. Copy `.env.example` to `.env.local` and fill in your values:
+
+```bash
+cp .env.example .env.local
+```
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `RESEND_API_SECRET_KEY` | Resend API key for sending emails. Get it from [resend.com/api-keys](https://resend.com/api-keys) | Yes |
+| `CONTACT_FORM_RECIPIENT_EMAIL` | Email address where contact form submissions are sent | Yes |
+| `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | Google reCAPTCHA v3 site key (public). Get it from [Google reCAPTCHA Admin](https://www.google.com/recaptcha/admin) | Yes |
+| `RECAPTCHA_SECRET_KEY` | Google reCAPTCHA v3 secret key (private) | Yes |
+
+**Note:** The `NEXT_PUBLIC_` prefix is required for the site key so Next.js exposes it to the browser.
+
+### Vercel Setup
+
+When deploying to Vercel, add these same variables in **Project Settings → Environment Variables**:
+- Mark `RESEND_API_SECRET_KEY` and `RECAPTCHA_SECRET_KEY` as **Sensitive**
+- You can set different `CONTACT_FORM_RECIPIENT_EMAIL` values for Production vs Preview environments
 
 ## Scripts
 
@@ -94,14 +118,24 @@ All images have descriptive `alt` attributes. Decorative images are marked with 
 
 ## Deployment
 
-This project is configured for static export. Running the build command generates a fully static site:
+### Vercel (Recommended)
+
+This project is deployed on Vercel. Push to the `main` branch and Vercel will automatically build and deploy.
 
 ```bash
-npm run build
+git push origin main
 ```
 
-This creates an `out/` folder containing all the static HTML, CSS, JS, and assets. Upload the contents of this folder to any web server or static hosting service.
+The build process includes PurgeCSS which automatically removes unused CSS, reducing the stylesheet size significantly.
 
-The build process includes PurgeCSS which automatically removes unused CSS, reducing the stylesheet size by ~50%.
+### Static Export (FTP/Traditional Hosting)
 
-**Note:** The site is configured with a base path of `/victoria-osteopathy`, so it expects to be served from that subdirectory (e.g., `https://yourdomain.com/victoria-osteopathy/`).
+For traditional hosting, you can export a static version:
+
+```bash
+npm run export
+```
+
+This creates an `out/` folder with static files configured for a `/victoria-osteopathy` subdirectory. Upload the contents to your web server.
+
+**Note:** Static export does not support the API routes (contact form backend). Use Vercel for full functionality.
