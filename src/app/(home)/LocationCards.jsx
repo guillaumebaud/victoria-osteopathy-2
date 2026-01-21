@@ -17,10 +17,11 @@ const LocationCards = () => {
     <div id="locations" className="location-cards-area space">
       <div className="container">
         <div className="title-area text-center mb-5">
-          <h2 className="sec-title">Our Locations</h2>
+          <h2 className="sec-title">Conveniently Located Across Greater Victoria</h2>
           <p className="sec-text">
-            Victoria Osteopathy operates out of two convenient locations in the Greater Victoria area.
-            Choose the clinic that works best for you.
+            We've partnered with two excellent healthcare facilities to bring osteopathic treatment to the Greater Victoria area.
+            Whether you live downtown or closer to Sidney, you'll receive the same attentive, personalized care at either location.
+            Pick the clinic that's most convenient for you.
           </p>
         </div>
 
@@ -223,8 +224,8 @@ const LocationCards = () => {
         </div>
       </div>
 
-      {/* Hidden Contact Form Dialog */}
-      <ContactFormSimple ref={contactFormRef} />
+      {/* Contact Form Dialog */}
+      <ContactFormSimple ref={contactFormRef} className="mt-5" />
     </div>
   );
 };
