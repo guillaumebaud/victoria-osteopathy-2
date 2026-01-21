@@ -55,6 +55,34 @@ When deploying to Vercel, add these same variables in **Project Settings → Env
 | `npm run build:no-purge` | Create production build without CSS purging |
 | `npm run start` | Run production server |
 | `npm run lint` | Run ESLint |
+| `npm run format` | Format all files with Prettier |
+| `npm run format:check` | Check formatting without making changes |
+| `npm run export` | Build static export for FTP hosting |
+
+## Code Quality
+
+This project uses **ESLint** for catching code issues and **Prettier** for consistent formatting.
+
+### VS Code Setup (Recommended)
+
+Install these extensions for the best experience:
+1. **ESLint** (by Microsoft) - shows errors/warnings as you type
+2. **Prettier** (by Prettier) - auto-formats on save
+
+The `.vscode/settings.json` is already configured for format-on-save.
+
+### Manual Usage
+
+```bash
+# Check for code issues
+npm run lint
+
+# Format all files
+npm run format
+
+# Check formatting without changing files
+npm run format:check
+```
 
 ## Project Structure
 
