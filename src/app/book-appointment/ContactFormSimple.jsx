@@ -14,13 +14,10 @@ import {
   DialogActions,
   IconButton
 } from '@mui/material';
-import { Send as SendIcon, Close as CloseIcon, Lock as LockIcon } from '@mui/icons-material';
+import { Send as SendIcon, Close as CloseIcon, Lock as LockIcon, CheckCircle as CheckCircleIcon } from '@mui/icons-material';
 
-// reCAPTCHA v3 Site Key
-const RECAPTCHA_SITE_KEY = "6Lf6NlMpAAAAAMUJ1nZDUGbEYyZIHw7RtwfrGq-h";
-
-// Formspree Form ID - Replace with your actual form ID from Formspree
-const FORMSPREE_FORM_ID = "YOUR_FORMSPREE_FORM_ID";
+// reCAPTCHA v3 Site Key from environment variable
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 const ContactForm = forwardRef(({ className = "" }, ref) => {
   const [open, setOpen] = useState(false);
@@ -39,10 +36,11 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState({ show: false, type: '', message: '' });
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   // Load reCAPTCHA v3 script
   useEffect(() => {
-    if (typeof window !== 'undefined' && !window.grecaptcha && RECAPTCHA_SITE_KEY !== "YOUR_RECAPTCHA_SITE_KEY") {
+    if (typeof window !== 'undefined' && !window.grecaptcha && RECAPTCHA_SITE_KEY) {
       const script = document.createElement('script');
       script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
       script.async = true;
@@ -56,8 +54,9 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => {
     setOpen(false);
-    // Clear alert when closing
+    // Clear alert and submitted state when closing
     setAlert({ show: false, type: '', message: '' });
+    setSubmitted(false);
   };
 
   const handleChange = (e) => {
@@ -67,11 +66,6 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
     });
   };
 
-  const showAlert = (type, message) => {
-    setAlert({ show: true, type, message });
-    setTimeout(() => setAlert({ show: false, type: '', message: '' }), 5000);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -79,7 +73,7 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
     if (formData.website) {
       console.log('Bot detected via honeypot');
       // Fake success to not alert the bot
-      showAlert('success', 'Thank you for your message! We will get back to you soon.');
+      setSubmitted(true);
       return;
     }
 
@@ -88,7 +82,7 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
     try {
       // Get reCAPTCHA token if available
       let recaptchaToken = null;
-      if (recaptchaLoaded && window.grecaptcha && RECAPTCHA_SITE_KEY !== "YOUR_RECAPTCHA_SITE_KEY") {
+      if (recaptchaLoaded && window.grecaptcha && RECAPTCHA_SITE_KEY) {
         try {
           recaptchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'contact_form' });
         } catch (recaptchaError) {
@@ -96,27 +90,27 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
         }
       }
 
-      // Submit to Formspree
-      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+      // Submit to our API route
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
           message: formData.message,
-          'g-recaptcha-response': recaptchaToken
+          recaptchaToken: recaptchaToken
         })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Form submission failed');
+        throw new Error(data.error || 'Form submission failed');
       }
 
-      showAlert('success', 'Thank you for your message! We will get back to you soon.');
       setFormData({
         name: '',
         email: '',
@@ -126,13 +120,15 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
         website: ''
       });
 
-      // Close dialog after 2 seconds on success
-      setTimeout(() => {
-        handleClose();
-      }, 2000);
+      // Show success state in dialog
+      setSubmitted(true);
     } catch (error) {
       console.error('Form submission error:', error);
-      showAlert('error', 'Sorry, there was an error sending your message. Please try again.');
+      setAlert({
+        show: true,
+        type: 'error',
+        message: 'error_with_fallback'
+      });
     } finally {
       setLoading(false);
     }
@@ -180,21 +176,39 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
         </IconButton>
 
         <DialogTitle>
-          Contact Us
+          {submitted ? 'Message Sent!' : 'Contact Us'}
         </DialogTitle>
 
         <DialogContent>
-          {alert.show && (
-            <Alert
-              severity={alert.type}
-              sx={{ mb: 3 }}
-              onClose={() => setAlert({ show: false, type: '', message: '' })}
-            >
-              {alert.message}
-            </Alert>
-          )}
+          {submitted ? (
+            <Box sx={{ textAlign: 'center', py: 4 }}>
+              <CheckCircleIcon sx={{ fontSize: 64, color: 'success.main', mb: 2 }} />
+              <Typography variant="h6" sx={{ mb: 2 }}>
+                Thank you for your message!
+              </Typography>
+              <Typography variant="body1" sx={{ color: '#666', mb: 3 }}>
+                We have received your inquiry and our osteopathic practitioner will get back to you as soon as possible.
+              </Typography>
+              <Typography variant="body2" sx={{ color: '#888' }}>
+                A confirmation email has been sent to your inbox.
+              </Typography>
+            </Box>
+          ) : (
+            <>
+              {alert.show && (
+                <Alert
+                  severity="error"
+                  sx={{ mb: 3 }}
+                  onClose={() => setAlert({ show: false, type: '', message: '' })}
+                >
+                  Sorry, there was an error sending your message. Please try again or contact us directly at{' '}
+                  <a href="mailto:victoriaosteopathy.ca@gmail.com" style={{ color: 'inherit', fontWeight: 'bold' }}>
+                    victoriaosteopathy.ca@gmail.com
+                  </a>
+                </Alert>
+              )}
 
-          <Box component="form" onSubmit={handleSubmit} id="contact-form">
+              <Box component="form" onSubmit={handleSubmit} id="contact-form">
             {/* Honeypot field - hidden from users, bots will fill it */}
             <TextField
               name="website"
@@ -277,43 +291,53 @@ const ContactForm = forwardRef(({ className = "" }, ref) => {
             </Grid>
           </Box>
 
-          {/* Privacy Notice */}
-          <Box
-            sx={{
-              mt: 3,
-              p: 2,
-              backgroundColor: '#f0f7ff',
-              borderRadius: 1,
-              border: '1px solid #cce0ff',
-              display: 'flex',
-              alignItems: 'flex-start',
-              gap: 1.5
-            }}
-          >
-            <LockIcon sx={{ color: '#2E5EAA', fontSize: 20, mt: 0.3 }} />
-            <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6 }}>
-              <strong>Your privacy matters to us.</strong> Your information is securely processed through our form service and forwarded to our osteopathic practitioner. It will only be used to respond to your inquiry or arrange a booking. We never sell or use your data for advertising.{' '}
-              <a href="/victoria-osteopathy/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#2E5EAA' }}>
-                View our Privacy Policy
-              </a>
-            </Typography>
-          </Box>
+              {/* Privacy Notice */}
+              <Box
+                sx={{
+                  mt: 3,
+                  p: 2,
+                  backgroundColor: '#f0f7ff',
+                  borderRadius: 1,
+                  border: '1px solid #cce0ff',
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: 1.5
+                }}
+              >
+                <LockIcon sx={{ color: '#2E5EAA', fontSize: 20, mt: 0.3 }} />
+                <Typography variant="body2" sx={{ color: '#555', lineHeight: 1.6 }}>
+                  <strong>Your privacy matters to us.</strong> Your information is securely processed through our form service and forwarded to our osteopathic practitioner. It will only be used to respond to your inquiry or arrange a booking. We never sell or use your data for advertising.{' '}
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#2E5EAA' }}>
+                    View our Privacy Policy
+                  </a>
+                </Typography>
+              </Box>
+            </>
+          )}
         </DialogContent>
 
-        <DialogActions sx={{ px: 3, py: 2, justifyContent: 'space-between' }}>
-          <Button variant="text" onClick={handleClose} sx={{ color: '#666' }}>
-            Cancel
-          </Button>
-          <Button
-            type="submit"
-            form="contact-form"
-            variant="contained"
-            size="medium"
-            disabled={loading}
-            startIcon={loading ? <CircularProgress size={16} color="inherit" /> : <SendIcon />}
-          >
-            {loading ? 'Sending...' : 'Send Message'}
-          </Button>
+        <DialogActions sx={{ px: 3, py: 2, justifyContent: submitted ? 'center' : 'space-between' }}>
+          {submitted ? (
+            <Button variant="contained" onClick={handleClose} size="medium">
+              Close
+            </Button>
+          ) : (
+            <>
+              <Button variant="text" onClick={handleClose} sx={{ color: '#666' }}>
+                Cancel
+              </Button>
+              <Button
+                type="submit"
+                form="contact-form"
+                variant="contained"
+                size="medium"
+                disabled={loading}
+                startIcon={loading ? <CircularProgress size={16} color="inherit" /> : <SendIcon />}
+              >
+                {loading ? 'Sending...' : 'Send Message'}
+              </Button>
+            </>
+          )}
         </DialogActions>
       </Dialog>
     </>

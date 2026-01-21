@@ -6,7 +6,8 @@ Website for Victoria Osteopathy - a manual osteopathic treatment clinic in Victo
 
 - **Framework:** Next.js 14 (App Router)
 - **UI:** React 18, Bootstrap 5, Material UI
-- **Contact Form:** Resend + Google reCAPTCHA v3
+- **Email:** [Resend](https://resend.com) Node SDK for transactional emails
+- **Spam Protection:** Google reCAPTCHA v3 (server-side verification)
 - **Hosting:** Vercel
 - **Other:** Slick Carousel, Magnific Popup, Isotope Layout
 
@@ -61,6 +62,8 @@ When deploying to Vercel, add these same variables in **Project Settings → Env
 src/
 ├── app/
 │   ├── _components/       # Shared components (Header, Footer)
+│   ├── api/
+│   │   └── contact/       # Contact form API route (POST)
 │   ├── (home)/            # Home page sections (Hero, About, Pricing, FAQ)
 │   ├── about-us/          # About Us page
 │   ├── about-osteopathy/  # About Osteopathy page
@@ -83,12 +86,34 @@ public/
 - `/about-osteopathy` - Information about osteopathic treatment
 - `/book-appointment` - Clinic locations, maps, and contact form
 
+## Contact Form
+
+The contact form on the Book Appointment page uses a secure server-side flow:
+
+1. User fills out the form (name, email, phone, message)
+2. reCAPTCHA v3 generates a token in the browser
+3. Form submits to `/api/contact` with the token
+4. Server verifies the reCAPTCHA token with Google (rejects scores < 0.5)
+5. Server sends notification email to the clinic via Resend
+6. Server sends confirmation email to the user via Resend
+7. User sees success message in the dialog
+
+**Security features:**
+- reCAPTCHA verification happens server-side (secret key never exposed)
+- Honeypot field to catch simple bots
+- All API keys stored in environment variables
+
+**Resend setup:**
+- The `from` address uses `onboarding@resend.dev` for testing
+- For production, [verify your domain](https://resend.com/docs/dashboard/domains/introduction) with Resend and update the `from` address in `src/app/api/contact/route.js`
+
 ## SEO
 
 The site is optimized for search engines with the following features:
 
-### Static Export
-Built as a fully static site (`output: 'export'`) for fast load times and better SEO performance. No server-side rendering required.
+### Hosting Modes
+- **Vercel (recommended):** Full functionality including API routes for the contact form
+- **Static Export:** For FTP hosting, but contact form won't work (no server-side API)
 
 ### Meta Tags
 - **Page-specific titles and descriptions** - Each page has unique metadata defined via Next.js `metadata` exports
