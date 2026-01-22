@@ -112,6 +112,7 @@ const LocationCards = () => {
                       alt="JaneApp Logo"
                       width={80}
                       height={24}
+                      style={{ width: "auto", height: "auto" }}
                       className="janeapp-logo"
                     />
                     <p className="janeapp-text">
@@ -205,6 +206,7 @@ const LocationCards = () => {
                       alt="JaneApp Logo"
                       width={80}
                       height={24}
+                      style={{ width: "auto", height: "auto" }}
                       className="janeapp-logo"
                     />
                     <p className="janeapp-text">

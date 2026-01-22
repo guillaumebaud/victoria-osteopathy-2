@@ -1,7 +1,7 @@
-import Script from "next/script";
 import { DM_Sans, Outfit } from "next/font/google";
 import "~/public/main-assets/css/fonts.css";
 import ThemeProvider from "./_components/ThemeProvider";
+import CookieConsent from "./_components/CookieConsent";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -16,9 +16,6 @@ const outfit = Outfit({
   variable: "--font-outfit",
   display: "swap",
 });
-
-// Google Analytics Measurement ID - Replace with your actual ID
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 
 const siteUrl = "https://victoriaosteopathy.ca/victoria-osteopathy";
 
@@ -147,30 +144,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${outfit.variable}`}>
       <head>
-        {/* Preload LCP hero image for faster discovery */}
-        <link rel="preload" as="image" href="/assets/prodslider.webp" fetchPriority="high" type="image/webp" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
-          `}
-        </Script>
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <CookieConsent />
       </body>
     </html>
   );

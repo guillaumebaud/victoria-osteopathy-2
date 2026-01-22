@@ -10,8 +10,8 @@ const CustomFooter = () => {
           <div className="row">
             {/* Logo and Practice Info */}
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-              <div className="custom-footer-logo">
-                <Image src="/assets/footerlogo.webp" alt="Victoria Osteopathy" width={150} height={50} />
+              <div className="custom-footer-logo" style={{ position: "relative", width: 150, height: 50 }}>
+                <Image src="/assets/footerlogo.webp" alt="Victoria Osteopathy" fill sizes="150px" style={{ objectFit: "contain" }} />
               </div>
               <p className="custom-footer-text">
                 Professional osteopathic care in Victoria, BC. Helping you achieve optimal health and wellness.
