@@ -1,1 +1,5 @@
-/* Google Fonts loaded via <link> in layout.js to avoid request chains */
+/* Override default fonts with next/font Google Fonts */
+:root {
+  --title-font: var(--font-outfit), sans-serif;
+  --body-font: var(--font-dm-sans), sans-serif;
+}
