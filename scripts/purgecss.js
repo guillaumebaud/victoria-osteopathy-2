@@ -61,8 +61,6 @@ async function purge() {
           /^overflow-/,
           /^active/,
           /^disabled/,
-          /^ri-/,
-          /^fa-/,
           /^la-/,
           /^offcanvas/,
           /^accordion/,

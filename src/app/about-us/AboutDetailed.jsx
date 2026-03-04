@@ -2,7 +2,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@mui/material";
-import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
+import {
+  ArrowOutward as ArrowOutwardIcon,
+  EmojiEventsOutlined,
+} from "@mui/icons-material";
 
 const AboutDetailed = () => {
   return (
@@ -31,7 +34,7 @@ const AboutDetailed = () => {
                 <div className="credentials-overlay">
                   <div className="credentials-content">
                     <div className="credentials-icon">
-                      <i className="ri-award-line"></i>
+                      <EmojiEventsOutlined sx={{ fontSize: 32, color: 'var(--theme-color)' }} />
                     </div>
                     <div className="credentials-text">
                       <h4>Master of Practice Diploma in Osteopathic Manipulative Sciences</h4>

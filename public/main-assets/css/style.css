@@ -1,73 +1,15 @@
 /*=================================
-    CSS Index Here
+    CSS Index
 ==================================*/
 /*
 
-01. Theme Base
-    1.1. Mixin
-    1.2. Function
-    1.3. Variable
-    1.4. Typography
-    1.5. Extend
-    1.7. Wordpress Default
-02. Reset
-    2.1. Container
-    2.2. Grid
-    2.3. Input
-    2.4. Slick Slider
-    2.5. Mobile Menu
-03. Utilities
-    3.1. Preloader
-    3.2. Buttons
-    3.3. Titles
-    3.4. Common
-    3.6. Font
-    3.7. Background
-    3.8. Text Color
-    3.9. Overlay
-    3.10. Animation
-
-04. Template Style
-    4.1. Widget
-    4.2. Header
-    4.3. Footer
-    4.4. Breadcumb
-    4.5. Pagination
-    4.6. Blog
-    4.7. Comments
-    4.8. Hero Area
-    4.9. Error    
-    4.00. Popup Search
-    4.00. Popup Side Menu
-    4.00. Wocommerce
-    4.00. Subscribe
-    4.00. Cart
-    4.00. Checkout
-    4.00. Wishlist
-    4.00. Contact
-    4.00. About
-    4.00. Team
-    4.00. Testimonial
-    4.00. Counter
-    4.00. Client
-    4.00. Simple Sections
-    4.00. Video
-    4.00. Category
-    4.00. Faq
-    4.00. feature
-    4.00. CTA
-    4.00. Service
-    4.00. Pricing
-    4.00. Why choose Us
-    4.00. Project
-    4.00. Award
-
+01. Theme Base (Variables, Typography)
+02. Reset (Container, Grid, Input, Mobile Menu)
+03. Utilities (Buttons, Titles, Common, Font, Background, Text Color, Overlay, Animation)
+04. Template Style (Blog/Blockquote, Hero Area, About, Testimonial, Simple Sections)
 05. Spacing
 
 */
-/*=================================
-    CSS Index End
-==================================*/
 /*=================================
    01. Theme Base
 ==================================*/
@@ -95,7 +37,6 @@
   --border-color: rgba(21, 22, 28, 0.15);
   --title-font: "Titillium Web", sans-serif;
   --body-font: "Archivo", sans-serif;
-  --icon-font: remixicon !important;
   --main-container: 1362px;
   --container-gutters: 24px;
   --section-space: 100px;
@@ -140,7 +81,6 @@ iframe {
   width: 100%;
 }
 
-.slick-slide:focus,
 button:focus,
 a:focus,
 a:active {
@@ -348,21 +288,6 @@ h5 {
   }
 }
 
-/*------------------- 1.5. Wpdefault -------------------*/
-
-p.has-drop-cap {
-  margin-bottom: 20px;
-}
-
-
-.has-large-font-size {
-  line-height: 1.4;
-}
-
-/* Large devices */
-
-/* Small devices */
-
 /*=================================
     02. Reset
 ==================================*/
@@ -473,15 +398,6 @@ p.has-drop-cap {
 }
 
 /*------------------- 2.2. Grid -------------------*/
-.slick-track>[class*=col] {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) / 2);
-  padding-left: calc(var(--bs-gutter-x) / 2);
-  margin-top: var(--bs-gutter-y);
-}
-
 .gy-50 {
   --bs-gutter-y: 50px;
 }
@@ -616,19 +532,6 @@ p.has-drop-cap {
   color: var(--body-color);
 }
 
-.form-group>i.fa-envelope {
-  padding-top: 1px;
-}
-
-.form-group>i.fa-comment {
-  margin-top: -2px;
-}
-
-.form-group>i.fa-chevron-down {
-  width: 17px;
-  background-color: var(--smoke-color);
-}
-
 .form-group.has-label>i {
   top: 50px;
 }
@@ -680,196 +583,6 @@ label {
 .form-messages.error {
   color: var(--error-color);
   display: block;
-}
-
-/*------------------- 2.4. Slick Slider -------------------*/
-.slick-track>[class*=col] {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) / 2);
-  padding-left: calc(var(--bs-gutter-x) / 2);
-  margin-top: var(--bs-gutter-y);
-}
-
-.slick-track {
-  min-width: 100%;
-}
-
-.slick-list {
-  padding-left: 0;
-  padding-right: 0;
-  overflow: hidden;
-}
-
-.slick-slide img {
-  display: inline-block;
-}
-
-.slick-dots {
-  list-style-type: none;
-  padding: 0;
-  margin: 40px 0 0px 0;
-  line-height: 0;
-  text-align: center;
-  height: max-content;
-}
-
-.slick-dots li {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.slick-dots li:last-child {
-  margin-right: 0;
-}
-
-.slick-dots button {
-  font-size: 0;
-  padding: 0;
-  width: 8px;
-  height: 8px;
-  line-height: 0;
-  border-radius: 9999px;
-  border: none;
-  background-color: #CCCCCD;
-  transition: all ease 0.4s;
-  position: relative;
-}
-
-.slick-dots button:hover {
-  border-color: var(--theme-color);
-}
-
-.slick-dots button:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 20px;
-  height: 20px;
-  margin: -10px 0 0 -10px;
-  background: #F2F2F2;
-  border-radius: 50%;
-  transition: all ease 0.4s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: -1;
-}
-
-.slick-dots .slick-active button {
-  background-color: var(--theme-color) !important;
-}
-
-.slick-dots .slick-active button::before {
-  opacity: 1;
-  visibility: visible;
-}
-
-.slick-arrow {
-  --pos-x: 362px;
-  display: inline-block;
-  padding: 0;
-  background-color: var(--smoke-color);
-  color: var(--theme-color);
-  position: absolute;
-  top: 50%;
-  border: none;
-  border-radius: 0;
-  right: var(--pos-x, 120px);
-  width: var(--icon-size, 65px);
-  height: var(--icon-size, 65px);
-  line-height: var(--icon-size, 65px);
-  font-size: var(--icon-font-size, 18px);
-  margin-top: calc(var(--icon-size, 53px) / -1);
-  box-shadow: 0px 6px 50px rgba(37, 37, 37, 0.05);
-  z-index: 2;
-  opacity: 1;
-}
-
-.slick-arrow i {
-  font-size: var(--icon-font-size, 24px);
-}
-
-.slick-arrow.default {
-  position: relative;
-  --pos-x: 0;
-  margin-top: 0;
-}
-
-.slick-arrow.slick-next {
-  margin-top: 20px;
-}
-
-.slick-arrow.style2 {
-  --icon-size: 50px;
-  border-radius: 2px;
-  color: var(--theme-color);
-  background: var(--smoke-color5);
-  box-shadow: none;
-}
-
-.slick-arrow.style2:hover {
-  background: var(--theme-color);
-  color: var(--white-color);
-}
-
-.slick-arrow.style3 {
-  color: var(--white-color);
-  border: 1px solid var(--theme-color);
-  background: transparent;
-  box-shadow: none;
-}
-
-.slick-arrow.style3:hover {
-  background: var(--theme-color);
-  border-color: var(--theme-color);
-}
-
-.slick-arrow:hover {
-  opacity: 1;
-  background: var(--theme-color);
-  color: var(--white-color);
-}
-
-/* Hight Resoulation devices */
-@media (min-width: 1922px) {
-  .slick-arrow {
-    --pos-x: 362px;
-  }
-}
-
-@media (max-width: 1600px) {
-  .slick-arrow {
-    --pos-x: 212px;
-  }
-}
-
-/* Extra large devices */
-@media (max-width: 1500px) {
-  .slick-arrow {
-    --pos-x: 132px;
-  }
-}
-
-/* Medium Large devices */
-@media (max-width: 1399px) {
-  .slick-arrow {
-    --pos-x: 120px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .slick-arrow {
-    --pos-x: 42px;
-  }
-}
-
-/* Medium devices */
-@media (max-width: 991px) {
-  .slick-dots {
-    margin: 40px 0 0 0;
-  }
 }
 
 /*------------------- 2.5. Mobile Menu -------------------*/
@@ -941,46 +654,6 @@ label {
 /*=================================
     03. Utilities
 ==================================*/
-/*------------------- 3.1. Preloader -------------------*/
-
-@keyframes mltShdSpin {
-  0% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-
-  5%,
-  95% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-
-  10%,
-  59% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
-  }
-
-  20% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
-  }
-
-  38% {
-    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
-  }
-
-  100% {
-    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
-  }
-}
-
-@keyframes round {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 /*------------------- 3.2. Buttons -------------------*/
 .btn {
   position: relative;
@@ -1244,48 +917,6 @@ h3.sec-title {
 
 .btn-group .btn {
   flex: none;
-}
-
-/*******Magnific Image*******/
-.mfp-zoom-in .mfp-content {
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
-}
-
-.mfp-zoom-in.mfp-bg {
-  opacity: 0;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.mfp-zoom-in.mfp-ready .mfp-content {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
-
-.mfp-zoom-in.mfp-ready.mfp-bg {
-  opacity: 0.7;
-}
-
-.mfp-zoom-in.mfp-removing .mfp-content {
-  -webkit-transform: scale(0.7);
-  -ms-transform: scale(0.7);
-  transform: scale(0.7);
-  opacity: 0;
-}
-
-.mfp-zoom-in.mfp-removing.mfp-bg {
-  opacity: 0;
 }
 
 /*------------------- 3.6. Font -------------------*/
@@ -1724,97 +1355,6 @@ a.text-theme:hover,
 /*=================================
     04. Template Style
 ==================================*/
-/*------------------- 4.1. Widget  -------------------*/
-
-/***wp-calender***/
-
-/********widget_recent_comments********/
-
-/******widget_recent_entries******/
-
-/*******widget_rss*******/
-
-/*Price Filter --------------*/
-
-/* Large devices */
-
-/* Medium devices */
-
-/* Small devices */
-
-/* Extra small devices */
-
-/* Small devices */
-
-/*------------------- 4.2. Header  -------------------*/
-.nav-header {
-  position: absolute;
-  z-index: 41;
-  left: 0;
-  right: 0;
-  top: 0;
-  background: var(--white-color);
-}
-
-@keyframes stickyAni {
-  0% {
-    transform: translate3d(0, -40px, 0) scaleY(0.8);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: translate3d(0, 0, 0) scaleY(1);
-    opacity: 1;
-  }
-}
-
-/****header-top*****/
-
-/* Header 1 ---------------------------------- */
-
-/* Extra large devices */
-
-/* Medium Large devices */
-
-/* Extra small devices */
-
-/* Header 2 ---------------------------------- */
-
-/* Extra large devices */
-
-/* Medium Large devices */
-
-/* Extra small devices */
-
-/* Header 3 ---------------------------------- */
-
-/* Header 4 ---------------------------------- */
-
-/*------------------- 4.3. Footer  -------------------*/
-/*Footer 1***************/
-
-/*Footer 1***************/
-
-/*Footer 2***************/
-
-/*Footer 3***************/
-
-/*Footer 4***************/
-
-/*------------------- 4.4. Breadcumb  -------------------*/
-
-/* Large devices */
-
-/* Small devices */
-
-/* Extra small devices */
-
-/*------------------- 4.5. Pagination  -------------------*/
-
-/* Medium devices */
-
-/* Small devices */
-
 /*------------------- 4.6. Blog  -------------------*/
 blockquote {
   font-size: 24px;
@@ -1859,19 +1399,19 @@ blockquote p cite {
 }
 
 blockquote:before {
-  content: "\ec52";
-  font-family: var(--icon-font);
+  content: "\201C";
+  font-family: Georgia, serif;
   position: absolute;
   right: 50px;
   bottom: 20px;
-  font-size: 80px;
+  font-size: 120px;
   font-weight: 700;
-  opacity: 1;
   color: var(--theme-color);
   font-style: normal;
   background: transparent;
   text-align: center;
   opacity: 0.1;
+  line-height: 1;
 }
 
 blockquote cite {
@@ -1940,26 +1480,6 @@ blockquote.has-text-align-right:before {
   }
 }
 
-/* Medium Large devices */
-
-/* Extra small devices */
-
-/* Extra small devices */
-
-/*------------------- 4.7. Comments  -------------------*/
-
-/* Large devices */
-
-/* Small devices */
-
-/*--------------------------------------------------------------
-# Comment Css
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# Comment Respond Form
---------------------------------------------------------------*/
-
 /*------------------- 4.8. Hero Area  -------------------*/
 /* Hero Global ---------------------------------- */
 
@@ -1980,33 +1500,6 @@ blockquote.has-text-align-right:before {
 /*hero-4-contact-area***************/
 
 /* Hero 5 ---------------------------------- */
-
-/*------------------- 4.9. Error  -------------------*/
-
-/*------------------- 4.00. Popup Search  -------------------*/
-
-/* Small devices */
-
-/*------------------- 4.00. Popup Side Menu  -------------------*/
-
-/* Small devices */
-
-/*------------------- 4.00. Subscribe  -------------------*/
-
-/* Large devices */
-
-/* Extra small devices */
-
-/* Extra small devices */
-
-/*subscribe-area-4***************/
-
-/*------------------- 4.00. Contact  -------------------*/
-/* Contact Area ---------------------------------- */
-
-/* Contact Area 2---------------------------------- */
-
-/* Contact Page---------------------------------- */
 
 /*------------------- 4.00. About  -------------------*/
 /*----------------------------------------------
@@ -2057,13 +1550,6 @@ blockquote.has-text-align-right:before {
 
 /* Benefit Area 5 ---------------------------------- */
 
-/*------------------- 4.00. Team  -------------------*/
-/* Team global ---------------------------------- */
-
-/* Team Area 2 ---------------------------------- */
-
-/* Team Details Page ---------------------------------- */
-
 /*------------------- 4.00. Testimonial  -------------------*/
 /* Testimonial 1 ---------------------------------- */
 
@@ -2092,23 +1578,6 @@ blockquote.has-text-align-right:before {
 /* Testimonial 3 ---------------------------------- */
 
 /* Testimonial 5 ---------------------------------- */
-
-/*------------------- 4.00. Counter  -------------------*/
-/* Counter 1 ---------------------------------- */
-
-/*------------------- 4.00. Blog  -------------------*/
-/* Blog Card ---------------------------------- */
-
-/* Blog Card 2---------------------------------- */
-
-/* Blog Card 4---------------------------------- */
-
-/* Blog Card 5---------------------------------- */
-
-/*------------------- 4.00. Client  -------------------*/
-/* Client 1 ---------------------------------- */
-
-/* Client 2 ---------------------------------- */
 
 /*------------------- 4.00. Simple Sections  -------------------*/
 .checklist ul {
@@ -2189,497 +1658,6 @@ blockquote.has-text-align-right:before {
 .read-more-btn:hover:after {
   width: 100%;
 }
-
-/* Large devices */
-
-/* Extra small devices */
-
-/*------------------- 4.00. Video -------------------*/
-/* Video 1 ---------------------------------- */
-
-/* Video 2 ---------------------------------- */
-
-/*------------------- 4.00. Category Menu -------------------*/
-/* Category 1 ---------------------------------- */
-
-/* Category 2 ---------------------------------- */
-
-/* Small devices */
-
-/* Category 3 ---------------------------------- */
-
-/*------------------- 4.00. Faq -------------------*/
-/* Faq 1 ---------------------------------- */
-.accordion-card {
-  margin-bottom: 20px;
-  transition: 0.4s ease-in-out;
-  overflow: hidden;
-  background: var(--smoke-color);
-  border: 2px solid rgba(21, 22, 28, 0.1);
-  border-radius: 0px;
-}
-
-.accordion-card .accordion-button {
-  font-size: 22px;
-  font-weight: 600;
-  font-family: var(--title-font);
-  color: var(--title-color);
-  border: 0;
-  text-transform: uppercase;
-  background-color: transparent;
-  padding: 12px 65px 12px 35px;
-  min-height: 86px;
-  gap: 10px;
-  margin-bottom: 0;
-  text-align: left;
-  transition: 0.3s;
-  position: relative;
-  box-shadow: none;
-}
-
-.accordion-card .accordion-button:after {
-  content: "\ea13";
-  height: 40px;
-  width: 40px;
-  border-radius: 7px;
-  line-height: 38px;
-  background: transparent;
-  border: 0;
-  font-family: var(--icon-font);
-  color: var(--body-color);
-  font-weight: 900;
-  font-size: 24px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  transition: 0.3s ease-in-out;
-}
-
-.accordion-card .accordion-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.accordion-card .accordion-button:not(.collapsed) {
-  color: var(--title-color);
-}
-
-.accordion-card .accordion-button:not(.collapsed):after {
-  content: "\f1af";
-  color: var(--theme-color);
-  transform: rotate(180deg);
-}
-
-.accordion-card .accordion-collapse {
-  border: none;
-}
-
-.accordion-card .accordion-body {
-  border-radius: 0;
-  background-color: transparent;
-  border: none;
-  padding: 0px 30px 30px 30px;
-  margin-top: -0.5em;
-}
-
-.accordion-card .accordion-body p {
-  margin-bottom: -0.6em;
-  font-size: 18px;
-  font-weight: 400;
-  font-family: var(--title-font);
-}
-
-.accordion-card:last-child {
-  margin-bottom: 0;
-}
-
-.accordion-card:has(.accordion-button:not(.collapsed)) {
-  background: #F7F7F7;
-  border-color: #F7F7F7;
-}
-
-/* Medium Large devices */
-@media (max-width: 1399px) {
-  .accordion-card .accordion-button {
-    font-size: 20px;
-    min-height: 65px;
-  }
-
-  .accordion-card .accordion-button:after {
-    font-size: 20px;
-    top: 13px;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 575px) {
-  .accordion-card .accordion-button {
-    padding: 15px 65px 15px 20px;
-  }
-
-  .accordion-card .accordion-body {
-    padding: 10px 20px 30px 20px;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 375px) {
-  .accordion-card .accordion-button {
-    font-size: 16px;
-  }
-}
-
-/* Faq 2 ---------------------------------- */
-
-/*------------------- 4.00. feature -------------------*/
-/***********feature area**********/
-
-/* Medium Large devices */
-
-/* Large devices */
-
-/* Medium devices */
-
-/* Medium Large devices */
-
-/* Medium Large devices */
-
-/* Medium devices */
-
-/* Small devices */
-
-/* Extra small devices */
-
-/***********feature area 3**********/
-
-/* Medium Large devices */
-
-/* Large devices */
-
-/* Medium devices */
-
-/*------------------- 4.00. CTA -------------------*/
-/* CTA Area 1 ---------------------------------- */
-
-/* CTA Area 2 ---------------------------------- */
-
-/* CTA Area 3 ---------------------------------- */
-
-/* CTA Area 4 ---------------------------------- */
-
-/*------------------- 4.00. Service -------------------*/
-/* Service Card ---------------------------------- */
-
-/* Service Card 02 ---------------------------------- */
-
-/* Service Card 03 ---------------------------------- */
-
-/* Service Card 4 ---------------------------------- */
-
-/* Service Card 5 ---------------------------------- */
-
-/* Service Card 6 ---------------------------------- */
-
-/*------------------- 4.00. Why Choose Us -------------------*/
-/*----------------------------------------------
-    # why choose us area style here
-----------------------------------------------*/
-
-/* Large devices */
-
-/* Medium devices */
-
-/* Small devices */
-
-/* Why Area 3 ---------------------------------- */
-
-/*skill-feature 1***********************/
-
-/************** wcu-thumb-wrap ***************/
-
-/* Why Area 4 ---------------------------------- */
-
-/*------------------- 4.00. Pricing -------------------*/
-/* Pricing Card ---------------------------------- */
-.pricing-tabs {
-  margin-bottom: 50px;
-  border: 1px solid rgba(31, 31, 31, 0.15);
-  display: inline-flex;
-  border-radius: 0;
-  padding: 10px;
-}
-
-.pricing-tabs .nav-item .nav-link {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--body-color);
-  font-family: var(--title-font);
-  text-transform: uppercase;
-  border-radius: 0;
-  margin: 0;
-  border: 0;
-  padding: 7px 20px;
-  background: transparent;
-}
-
-.pricing-tabs .nav-item .nav-link.active {
-  background: var(--theme-color);
-  color: var(--white-color);
-}
-
-.pricing-card {
-  display: block;
-  padding: 0;
-  background: #F7F7F7;
-  border: 2px solid #F7F7F7;
-  box-shadow: none;
-  transition: 0.4s;
-  padding: 40px 45px;
-  /* Extra small devices */
-}
-
-.pricing-card .pricing-card_title {
-  font-size: 24px;
-  font-weight: 700;
-  min-width: 220px;
-  color: var(--title-color);
-  margin-top: -0.3em;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-
-.pricing-card .pricing-card_text {
-  margin-bottom: 17px;
-}
-
-.pricing-card .pricing-card-details {
-  margin: 28px -25px 40px;
-  background: #EDEDED;
-  padding: 30px;
-  transition: 0.4s;
-  position: relative;
-}
-
-.pricing-card .pricing-card_price {
-  margin-bottom: 3px;
-  font-weight: 600;
-  font-size: 70px;
-  line-height: 1.228;
-  letter-spacing: -0.015em;
-  color: var(--theme-color);
-  display: inline-block;
-  position: relative;
-  padding-bottom: 15px;
-  /* Medium Large devices */
-}
-
-@media (max-width: 1299px) {
-  .pricing-card .pricing-card_price {
-    font-size: 60px;
-  }
-}
-
-.pricing-card .pricing-card_currency {
-  font-size: 40px;
-  font-weight: 600;
-  position: relative;
-  top: -25px;
-  /* Medium Large devices */
-}
-
-@media (max-width: 1299px) {
-  .pricing-card .pricing-card_currency {
-    top: -22px;
-  }
-}
-
-.pricing-card .pricing-card_duration {
-  font-size: 26px;
-  color: var(--body-color);
-  font-weight: 500;
-  letter-spacing: normal;
-}
-
-.pricing-card .checklist li {
-  position: relative;
-  gap: 12px;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.pricing-card .checklist li:last-child {
-  margin-bottom: 0;
-}
-
-.pricing-card .checklist li:before {
-  content: "";
-  position: relative;
-  width: 6px;
-  height: 6px;
-  background: var(--theme-color);
-  transition: 0.4s;
-  top: 10px;
-}
-
-.pricing-card .btn-with-icon {
-  color: var(--title-color);
-}
-
-.pricing-card:hover {
-  border: 2px solid var(--theme-color);
-}
-
-.pricing-card:hover .pricing-card-details {
-  background: var(--title-color);
-}
-
-.pricing-card:hover .checklist li {
-  color: var(--white-color);
-}
-
-.pricing-card:hover .checklist li:before {
-  background: var(--theme-color);
-  opacity: 1;
-}
-
-@media (max-width: 375px) {
-  .pricing-card {
-    padding: 30px 35px;
-  }
-
-  .pricing-card .pricing-card-details {
-    padding: 20px;
-  }
-}
-
-/*------------------- 4.00. Portfolio -------------------*/
-/* Portfolio 1 ---------------------------------- */
-
-/* Portfolio 2 ---------------------------------- */
-
-/* Portfolio 3 ---------------------------------- */
-
-/* Portfolio 4 ---------------------------------- */
-
-/* Portfolio 5 ---------------------------------- */
-
-/* Project page ---------------------------------- */
-
-/*------------------- 4.00. Marquee -------------------*/
-/* Marquee 1---------------------------------- */
-
-/*------------------- 4.00. Appointment -------------------*/
-/*----------------------------------------------
-    # Appointment Area 1
-----------------------------------------------*/
-
-/* Appointment 2 ---------------------------------- */
-
-/* Extra small devices */
-
-/*------------------- 4.00. Process -------------------*/
-/* Process Area 1 ---------------------------------- */
-
-/* Process Area 2 ---------------------------------- */
-
-/*------------------- 4.00. Product -------------------*/
-
-.mfp-content {
-  margin: 1.5rem auto;
-}
-
-.mfp-content .product-details-img {
-  padding-top: 15px;
-}
-
-.mfp-content .product-about {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
-.mfp-content .container {
-  position: relative;
-}
-
-.mfp-content .product-big-img {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  transition: all 0.15s ease-out;
-}
-
-.mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
-}
-
-.mfp-fade.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-
-.mfp-fade.mfp-wrap .mfp-content {
-  opacity: 0;
-  transition: all 0.4s ease-out;
-}
-
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-  opacity: 1;
-}
-
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-  opacity: 0;
-}
-
-/* Large devices */
-
-/* Medium devices */
-
-/* Extra small devices */
-
-.mfp-woosq .mfp-close {
-  width: 44px;
-  height: 44px;
-  line-height: initial;
-}
-
-/* Medium Large devices */
-
-/* Medium Large devices */
-
-/* Large devices */
-
-/* Medium devices */
-
-/* Small devices */
-
-/* Extra small devices */
-
-/* Extra small devices */
-
-/*------------------- 4.00. Cart -------------------*/
-
-/* Medium devices */
-
-/* Small devices */
-
-/*Checkout Area***************/
-
-/*------------------- 4.00. Wishlist -------------------*/
-
-/* Medium devices */
-
-/* Small devices */
-
-/*------------------- 4.00. Award -------------------*/
-/*----------------------------------------------
-    # Award Area 1
-----------------------------------------------*/
 
 /*=================================
     05. Spacing

@@ -2,7 +2,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@mui/material";
-import { ArrowOutward as ArrowOutwardIcon } from "@mui/icons-material";
+import {
+  ArrowOutward as ArrowOutwardIcon,
+  CheckOutlined,
+  VolunteerActivismOutlined,
+  ArrowForwardOutlined,
+} from "@mui/icons-material";
 
 const AboutOsteopathyContent = () => {
   return (
@@ -41,7 +46,7 @@ const AboutOsteopathyContent = () => {
                 {/* Placeholder for a relevant osteopathy image */}
                 <div className="placeholder-image">
                   <div className="placeholder-content">
-                    <i className="ri-hand-heart-line"></i>
+                    <VolunteerActivismOutlined />
                     <p>Holistic Manual Therapy</p>
                   </div>
                 </div>
@@ -63,22 +68,22 @@ const AboutOsteopathyContent = () => {
                 <div className="col-md-6">
                   <div className="treatment-list">
                     <ul>
-                      <li><i className="ri-check-line"></i> Acute / Chronic Neck and Back Pain</li>
-                      <li><i className="ri-check-line"></i> Generalized Muscle and Joint Pain</li>
-                      <li><i className="ri-check-line"></i> Digestive Problems</li>
-                      <li><i className="ri-check-line"></i> Postural Issues</li>
-                      <li><i className="ri-check-line"></i> Headaches and Migraines</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Acute / Chronic Neck and Back Pain</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Generalized Muscle and Joint Pain</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Digestive Problems</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Postural Issues</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Headaches and Migraines</li>
                     </ul>
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="treatment-list">
                     <ul>
-                      <li><i className="ri-check-line"></i> Congestion and Sinus Issues</li>
-                      <li><i className="ri-check-line"></i> Sleep Problems and Stress</li>
-                      <li><i className="ri-check-line"></i> Sport-Related Injuries</li>
-                      <li><i className="ri-check-line"></i> Weakened Constitution and Fatigue</li>
-                      <li><i className="ri-check-line"></i> Much More!</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Congestion and Sinus Issues</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Sleep Problems and Stress</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Sport-Related Injuries</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Weakened Constitution and Fatigue</li>
+                      <li><CheckOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Much More!</li>
                     </ul>
                   </div>
                 </div>
@@ -123,10 +128,10 @@ const AboutOsteopathyContent = () => {
                 <div className="principles-section mt-4">
                   <h4 className="principles-title">The Core Principles of Osteopathic Treatment:</h4>
                   <ul className="principles-list">
-                    <li><i className="ri-arrow-right-line"></i> The body is a dynamic unit of function</li>
-                    <li><i className="ri-arrow-right-line"></i> Structure and Function are reciprocally interrelated</li>
-                    <li><i className="ri-arrow-right-line"></i> The body is self-healing and self-regulating</li>
-                    <li><i className="ri-arrow-right-line"></i> Rational treatment is based on the above principles</li>
+                    <li><ArrowForwardOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> The body is a dynamic unit of function</li>
+                    <li><ArrowForwardOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Structure and Function are reciprocally interrelated</li>
+                    <li><ArrowForwardOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> The body is self-healing and self-regulating</li>
+                    <li><ArrowForwardOutlined sx={{ fontSize: 22, mr: 1, mt: '2px', color: 'var(--theme-color)' }} /> Rational treatment is based on the above principles</li>
                   </ul>
                 </div>
                 <blockquote className="osteopathy-quote mt-4">

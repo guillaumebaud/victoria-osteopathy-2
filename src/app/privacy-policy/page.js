@@ -12,8 +12,6 @@ import CustomFooter from "~/app/_components/CustomFooter";
 
 import "~/public/main-assets/css/bootstrap.min.css";
 import "~/public/main-assets/css/style.css";
-import "~/public/main-assets/css/remixicon.css";
-import "~/public/main-assets/css/react-adjustment.css";
 import "~/public/custom-styles.css";
 
 export default function PrivacyPolicyPage() {

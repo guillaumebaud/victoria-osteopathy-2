@@ -15,14 +15,12 @@ const ROOT = path.join(__dirname, '..');
 // CSS files to purge (only the custom/template ones, not third-party minified libs)
 const CSS_FILES_TO_PURGE = [
   'public/main-assets/css/style.css',
-  'public/main-assets/css/react-adjustment.css',
   'public/custom-styles.css',
 ];
 
 // Files to leave alone (minified vendor files)
 const SKIP_FILES = [
   'bootstrap.min.css',
-  'remixicon.css',
   'fonts.css',
 ];
 
@@ -80,8 +78,6 @@ async function purgeSourceCSS() {
           /^overflow-/,
           /^active/,
           /^disabled/,
-          /^ri-/,
-          /^fa-/,
           /^la-/,
           /^offcanvas/,
           /^accordion/,
