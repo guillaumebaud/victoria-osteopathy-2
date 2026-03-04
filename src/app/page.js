@@ -2,6 +2,7 @@ import About from "~/app/(home)/About";
 import FAQ from "~/app/(home)/FAQ";
 import CustomHero from "~/app/(home)/CustomHero";
 import LocationCards from "~/app/(home)/LocationCards";
+import Pricing from "~/app/(home)/Pricing";
 import CustomFooter from "~/app/_components/CustomFooter";
 import CustomHeader from "~/app/_components/CustomHeader";
 
@@ -17,6 +18,7 @@ export default function HomePage() {
         <CustomHero />
         <About />
         <LocationCards />
+        <Pricing />
         <FAQ />
       </main>
       <CustomFooter />

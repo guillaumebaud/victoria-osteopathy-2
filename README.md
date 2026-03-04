@@ -4,12 +4,12 @@ Website for Victoria Osteopathy - a manual osteopathic treatment clinic in Victo
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
-- **UI:** React 18, Bootstrap 5, Material UI
+- **Framework:** Next.js 15 (App Router)
+- **UI:** React 19, Bootstrap 5, Material UI
 - **Email:** [Resend](https://resend.com) Node SDK for transactional emails
 - **Spam Protection:** Google reCAPTCHA v3 (server-side verification)
 - **Hosting:** Vercel
-- **Other:** Slick Carousel, Magnific Popup, Isotope Layout
+- **Other:** PurgeCSS (build-time CSS optimization)
 
 ## Getting Started
 
@@ -178,7 +178,7 @@ This project is deployed on Vercel. Push to the `main` branch and Vercel will au
 git push origin main
 ```
 
-The build process includes PurgeCSS which automatically removes unused CSS, reducing the stylesheet size significantly.
+The build process includes PurgeCSS which automatically removes unused CSS from both standard Vercel builds (`.next/static/css/`) and static exports (`out/`), reducing the stylesheet size significantly.
 
 ### Static Export (FTP/Traditional Hosting)
 

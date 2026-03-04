@@ -4,13 +4,25 @@ const path = require('path');
 const glob = require('glob');
 
 async function purge() {
-  const outDir = path.join(__dirname, '..', 'out');
+  const rootDir = path.join(__dirname, '..');
+  const nextCssDir = path.join(rootDir, '.next', 'static', 'css');
+  const outDir = path.join(rootDir, 'out');
 
-  // Find all CSS files in out directory
-  const cssFiles = glob.sync('**/*.css', { cwd: outDir, absolute: true });
+  // Determine which build output to process
+  let cssFiles = [];
+
+  if (fs.existsSync(nextCssDir)) {
+    // Standard Vercel / next build output (.next/static/css/ is flat)
+    cssFiles = glob.sync('*.css', { cwd: nextCssDir, absolute: true });
+    console.log('Using .next/static/css/ (standard build)');
+  } else if (fs.existsSync(outDir)) {
+    // Static export output (may have nested CSS)
+    cssFiles = glob.sync('**/*.css', { cwd: outDir, absolute: true });
+    console.log('Using out/ (static export)');
+  }
 
   if (cssFiles.length === 0) {
-    console.log('No CSS files found in out/ directory');
+    console.log('No CSS files found in .next/static/css/ or out/ — skipping PurgeCSS.');
     return;
   }
 
@@ -18,7 +30,7 @@ async function purge() {
 
   // Get content files to scan for used classes
   const contentFiles = glob.sync('src/**/*.{js,jsx,ts,tsx}', {
-    cwd: path.join(__dirname, '..'),
+    cwd: rootDir,
     absolute: true
   });
 

@@ -1659,6 +1659,155 @@ blockquote.has-text-align-right:before {
   width: 100%;
 }
 
+/*------------------- 4.00. Pricing -------------------*/
+/* Pricing Card ---------------------------------- */
+.pricing-tabs {
+  margin-bottom: 50px;
+  border: 1px solid rgba(31, 31, 31, 0.15);
+  display: inline-flex;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.pricing-tabs .nav-item .nav-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--body-color);
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  border-radius: 0;
+  margin: 0;
+  border: 0;
+  padding: 7px 20px;
+  background: transparent;
+}
+
+.pricing-tabs .nav-item .nav-link.active {
+  background: var(--theme-color);
+  color: var(--white-color);
+}
+
+.pricing-card {
+  display: block;
+  padding: 40px 45px;
+  background: #F7F7F7;
+  border: 2px solid #F7F7F7;
+  box-shadow: none;
+  transition: 0.4s;
+}
+
+.pricing-card .pricing-card_title {
+  font-size: 24px;
+  font-weight: 700;
+  min-width: 220px;
+  color: var(--title-color);
+  margin-top: -0.3em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.pricing-card .pricing-card_text {
+  margin-bottom: 17px;
+}
+
+.pricing-card .pricing-card-details {
+  margin: 28px -25px 40px;
+  background: #EDEDED;
+  padding: 30px;
+  transition: 0.4s;
+  position: relative;
+}
+
+.pricing-card .pricing-card_price {
+  margin-bottom: 3px;
+  font-weight: 600;
+  font-size: 70px;
+  line-height: 1.228;
+  letter-spacing: -0.015em;
+  color: var(--theme-color);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 1299px) {
+  .pricing-card .pricing-card_price {
+    font-size: 60px;
+  }
+}
+
+.pricing-card .pricing-card_currency {
+  font-size: 40px;
+  font-weight: 600;
+  position: relative;
+  top: -25px;
+}
+
+@media (max-width: 1299px) {
+  .pricing-card .pricing-card_currency {
+    top: -22px;
+  }
+}
+
+.pricing-card .pricing-card_duration {
+  font-size: 26px;
+  color: var(--body-color);
+  font-weight: 500;
+  letter-spacing: normal;
+}
+
+.pricing-card .checklist li {
+  position: relative;
+  gap: 12px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.pricing-card .checklist li:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-card .checklist li:before {
+  content: "";
+  position: relative;
+  width: 6px;
+  height: 6px;
+  background: var(--theme-color);
+  transition: 0.4s;
+  top: 10px;
+}
+
+.pricing-card .btn-with-icon {
+  color: var(--title-color);
+}
+
+.pricing-card:hover {
+  border: 2px solid var(--theme-color);
+}
+
+.pricing-card:hover .pricing-card-details {
+  background: var(--title-color);
+}
+
+.pricing-card:hover .checklist li {
+  color: var(--white-color);
+}
+
+.pricing-card:hover .checklist li:before {
+  background: var(--theme-color);
+  opacity: 1;
+}
+
+@media (max-width: 375px) {
+  .pricing-card {
+    padding: 30px 35px;
+  }
+
+  .pricing-card .pricing-card-details {
+    padding: 20px;
+  }
+}
+
 /*=================================
     05. Spacing
 ==================================*/

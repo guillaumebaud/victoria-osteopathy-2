@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
                   <li>Your message</li>
                 </ul>
                 <p>
-                  This information is processed through Formspree, a secure third-party form service. Formspree stores your submission temporarily to deliver it to us and provide spam protection. You can review Formspree's privacy practices at <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>.
+                  This information is processed server-side through Resend, a transactional email service. Resend delivers your submission to us as an email and does not store your submission long-term. You can review Resend's privacy practices at <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a>.
                 </p>
 
                 <h3>Analytics Data</h3>
@@ -75,6 +75,9 @@ export default function PrivacyPolicyPage() {
                 </ul>
                 <p>
                   This data is aggregated and anonymous—we cannot identify individual visitors. Google Analytics uses cookies to collect this information. You can learn more about Google's privacy practices at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
+                </p>
+                <p>
+                  When you click "Decline" on our cookie consent banner, Google Analytics is never loaded and no analytics cookies are set. The site remains fully functional without analytics cookies. Only your consent preference is stored locally in your browser via localStorage (not a cookie).
                 </p>
 
                 <h3>Spam Protection</h3>
@@ -118,7 +121,7 @@ export default function PrivacyPolicyPage() {
                 <h2>Third-Party Services</h2>
                 <p>Our website uses the following third-party services:</p>
                 <ul>
-                  <li><strong>Formspree</strong> - Contact form processing</li>
+                  <li><strong>Resend</strong> - Contact form email delivery</li>
                   <li><strong>Google Analytics</strong> - Website analytics</li>
                   <li><strong>Google reCAPTCHA</strong> - Spam protection</li>
                   <li><strong>Jane App</strong> - Appointment booking (when you click our booking links)</li>
