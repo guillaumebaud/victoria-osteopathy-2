@@ -22,10 +22,6 @@ const CSS_FILES_TO_PURGE = [
 // Files to leave alone (minified vendor files)
 const SKIP_FILES = [
   'bootstrap.min.css',
-  'fontawesome.min.css',
-  'magnific-popup.min.css',
-  'nice-select.min.css',
-  'slick.min.css',
   'remixicon.css',
   'fonts.css',
 ];
@@ -57,8 +53,6 @@ async function purgeSourceCSS() {
       css: [cssFile],
       safelist: {
         standard: [
-          /^slick/,
-          /^mfp/,
           /^modal/,
           /^fade/,
           /^show/,
@@ -102,7 +96,7 @@ async function purgeSourceCSS() {
           /^was-/,
           /^has-/,
         ],
-        deep: [/slick/, /magnific/, /mfp/],
+        deep: [],
       },
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
     });

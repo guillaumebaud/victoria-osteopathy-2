@@ -34,8 +34,6 @@ async function purge() {
       css: [cssFile],
       safelist: {
         standard: [
-          /^slick/,
-          /^mfp/,
           /^modal/,
           /^fade/,
           /^show/,
@@ -79,7 +77,7 @@ async function purge() {
           /^was-/,
           /^has-/,
         ],
-        deep: [/slick/, /magnific/, /mfp/],
+        deep: [],
       },
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
     });
