@@ -115,8 +115,11 @@ export default function PrivacyPolicyPage() {
                   <li>Request access to your personal information</li>
                   <li>Request correction of inaccurate information</li>
                   <li>Request deletion of your information</li>
-                  <li>Opt out of analytics tracking by using browser privacy settings or tools like <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
+                  <li>Opt out of analytics tracking by clicking "Decline" on our cookie consent banner, or by using browser privacy settings or tools like <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
                 </ul>
+                <p>
+                  To make any of these requests, please reach out using the contact details listed below or through our <a href="/book-appointment">contact form</a>.
+                </p>
 
                 <h2>Third-Party Services</h2>
                 <p>Our website uses the following third-party services:</p>
