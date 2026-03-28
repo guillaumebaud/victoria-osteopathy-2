@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Script from "next/script";
 import { Button, Box, Typography } from "@mui/material";
 
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your actual ID
+const GA_MEASUREMENT_ID = "G-26F6S5YC47";
 
 const CookieConsent = () => {
   const [consent, setConsent] = useState(null); // null = not yet checked, 'accepted', 'declined'
