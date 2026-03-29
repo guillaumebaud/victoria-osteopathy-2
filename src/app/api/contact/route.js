@@ -45,7 +45,7 @@ export async function POST(request) {
 
     // Send email via Resend
     const { data, error } = await resend.emails.send({
-      from: 'Victoria Osteopathy <onboarding@resend.dev>',
+      from: 'Victoria Osteopathy <noreply@victoria-osteopathy.ca>',
       to: process.env.CONTACT_FORM_RECIPIENT_EMAIL,
       replyTo: email,
       subject: `Contact Form: Message from ${name}`,
