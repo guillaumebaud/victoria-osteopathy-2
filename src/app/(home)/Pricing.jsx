@@ -28,15 +28,15 @@ const Pricing = () => {
                 <div className={`tab-pane fade ${isActive ? '' : 'show active'}`} id="monthly" role={"tabpanel"} aria-labelledby="monthly-tab">
                     <div className="container">
                         <div className="row gy-4 justify-content-center">
-                            <div className="col-xl-3 col-md-6">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="pricing-card">
-                                    <h3 className="pricing-card_title">Consultation</h3>
-                                    <p className="pricing-card_text">15 minutes</p>
+                                    <h3 className="pricing-card_title">Initial Consultation</h3>
+                                    <p className="pricing-card_text">45 minutes</p>
                                     <h4 className="pricing-card_price">
-                                        <span className="pricing-card_currency">FREE</span>
+                                        <span className="pricing-card_currency">$</span>125<span className="pricing-card_duration">.00</span>
                                     </h4>
                                     <div className="pricing-card-details">
-                                        <p>Book a free 15 minute consultation with Michael Dennis. During this consultation you can ask questions about osteopathy and find out if osteopathic treatment is right for you.</p>
+                                        <p>Initial assessment and treatment with Michael Dennis. Includes a thorough review of your health history, a full-body musculoskeletal assessment, and a first hands-on treatment tailored to your needs. Ideal for new patients starting their osteopathic care.</p>
                                     </div>
                                     <Button
                                         component={Link}
@@ -51,12 +51,12 @@ const Pricing = () => {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="col-xl-3 col-md-6">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="pricing-card">
                                     <h3 className="pricing-card_title">Standard Treatment</h3>
                                     <p className="pricing-card_text">30 minutes</p>
                                     <h4 className="pricing-card_price">
-                                        <span className="pricing-card_currency">$</span>90<span className="pricing-card_duration">.00</span>
+                                        <span className="pricing-card_currency">$</span>95<span className="pricing-card_duration">.00</span>
                                     </h4>
                                     <div className="pricing-card-details">
                                         <p>Ideal for someone who is having ongoing osteopathic treatments, as part of their healthcare maintenance program.</p>
@@ -74,38 +74,15 @@ const Pricing = () => {
                                     </Button>
                                 </div>
                             </div>
-                            <div className="col-xl-3 col-md-6">
+                            <div className="col-xl-4 col-md-6">
                                 <div className="pricing-card">
-                                    <h3 className="pricing-card_title">In Home Treatment</h3>
-                                    <p className="pricing-card_text">60 minutes per session</p>
+                                    <h3 className="pricing-card_title">Extended Standard Treatment</h3>
+                                    <p className="pricing-card_text">45 minutes</p>
                                     <h4 className="pricing-card_price">
                                         <span className="pricing-card_currency">$</span>125<span className="pricing-card_duration">.00</span>
                                     </h4>
                                     <div className="pricing-card-details">
-                                        <p>Available for anywhere in the Greater Victoria Region. Advance booking required. Please contact Michael directly at 905-933-8594 to arrange a mobile service call.</p>
-                                    </div>
-                                    <Button
-                                        component={Link}
-                                        href="/book-appointment"
-                                        variant="contained"
-                                        size="medium"
-                                        fullWidth
-                                        endIcon={<ArrowOutwardIcon />}
-                                        sx={{ mt: 2 }}
-                                    >
-                                        Book Appointment
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className="col-xl-3 col-md-6">
-                                <div className="pricing-card">
-                                    <h3 className="pricing-card_title">Under 16</h3>
-                                    <p className="pricing-card_text">30 minutes per session</p>
-                                    <h4 className="pricing-card_price">
-                                        <span className="pricing-card_currency">$</span>50<span className="pricing-card_duration">.00</span>
-                                    </h4>
-                                    <div className="pricing-card-details">
-                                        <p>Ideal for someone under the age of 16, who is having osteopathic treatment as part of their healthcare maintenance program. Assessment and treatment will be focused on the individual needs of the child.</p>
+                                        <p>Ideal for those seeking more in-depth or deep care. A longer session allows Michael to address multiple areas of concern, work through more complex patterns of tension, and spend extra time on hands-on treatment for lasting results.</p>
                                     </div>
                                     <Button
                                         component={Link}

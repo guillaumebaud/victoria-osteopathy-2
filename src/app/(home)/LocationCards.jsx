@@ -64,17 +64,24 @@ const LocationCards = () => {
                     </div>
                     <div className="hours-item">
                       <span className="day">Wednesday:</span>
-                      <span className="time">2:30pm - 8:45pm</span>
+                      <span className="time">8am - 8:45pm</span>
                     </div>
                     <div className="hours-item">
                       <span className="day">Friday:</span>
-                      <span className="time">8am - 2:15pm</span>
+                      <span className="time">Closed</span>
+                    </div>
+                    <div className="hours-item">
+                      <span className="day">Saturday *:</span>
+                      <span className="time">8am - 2:30pm</span>
                     </div>
                     <div className="hours-item">
                       <span className="day">Sunday:</span>
                       <span className="time">Closed</span>
                     </div>
                   </div>
+                  <p className="location-note mt-3">
+                    <em>* when available</em>
+                  </p>
                 </div>
 
                 <div className="location-card-actions">
@@ -162,13 +169,10 @@ const LocationCards = () => {
                       <span className="time">8am - 1pm</span>
                     </div>
                     <div className="hours-item">
-                      <span className="day">Wednesday:</span>
-                      <span className="time">8am - 1pm</span>
+                      <span className="day">Thursday:</span>
+                      <span className="time">8am - 3pm</span>
                     </div>
                   </div>
-                  <p className="location-note mt-3">
-                    <em>* For in-home treatments, please contact us directly</em>
-                  </p>
                 </div>
 
                 <div className="location-card-actions">

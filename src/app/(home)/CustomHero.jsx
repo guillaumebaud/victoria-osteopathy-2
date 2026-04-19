@@ -17,7 +17,7 @@ const CustomHero = () => {
             What can Osteopathy treat?
           </h1>
           <p className="custom-hero-text">
-            Osteopathy is a hands-on manual assessment and treatment approach that addresses the root causes of pain and dysfunction in your musculoskeletal system.
+            Osteopathy is a hands-on manual assessment and treatment approach that addresses the root causes of pain and dysfunction in your musculoskeletal system. No popping, no cracking.
           </p>
           <div className="custom-hero-actions">
             <Button

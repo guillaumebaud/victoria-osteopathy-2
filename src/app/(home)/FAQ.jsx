@@ -28,7 +28,7 @@ const FAQ = () => {
       id: "panel1",
       question: "What can Osteopathy treat?",
       answer: [
-        "Osteopathy can treat a wide range of conditions including back and neck pain, joint pain, headaches, sports injuries, digestive issues, and chronic pain conditions. It's particularly effective for musculoskeletal problems and can help improve overall body function and mobility."
+        "Osteopathy can treat a wide range of conditions including back and neck pain, joint pain, headaches, sports injuries, digestive issues, blood and lymphatic circulation, and chronic pain conditions. It's particularly effective for musculoskeletal problems and can help improve overall body function and mobility."
       ]
     },
     {
@@ -42,7 +42,7 @@ const FAQ = () => {
       id: "panel3",
       question: "Is Osteopathy safe for children?",
       answer: [
-        "Yes, osteopathy is very safe for children and can be beneficial for various pediatric conditions. Michael uses gentle, age-appropriate techniques specifically tailored for young patients. Special pricing is available for patients under 16 years of age."
+        "Yes, osteopathy is very safe for children and can be beneficial for various pediatric conditions. Michael uses gentle, age-appropriate techniques specifically tailored for young patients."
       ]
     },
     {
