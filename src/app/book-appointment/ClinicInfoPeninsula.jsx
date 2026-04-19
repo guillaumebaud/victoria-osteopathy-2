@@ -27,7 +27,7 @@ const ClinicInfoPeninsula = () => {
         <h3>Hours:</h3>
         <ul>
           <li><span>Tuesday:</span> <span>8am-1pm</span></li>
-          <li><span>Wednesday:</span> <span>8am-1pm</span></li>
+          <li><span>Thursday:</span> <span>8am-3pm</span></li>
         </ul>
       </div>
 

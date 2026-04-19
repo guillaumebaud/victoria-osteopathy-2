@@ -28,10 +28,12 @@ const ClinicInfo = () => {
         <ul>
           <li><span>Monday:</span> <span>2:30pm-8:45pm</span></li>
           <li><span>Tuesday:</span> <span>2:30pm-8:45pm</span></li>
-          <li><span>Wednesday:</span> <span>2:30pm-8:45pm</span></li>
-          <li><span>Friday:</span> <span>8am-2:15pm</span></li>
+          <li><span>Wednesday:</span> <span>8am-8:45pm</span></li>
+          <li><span>Friday:</span> <span>Closed</span></li>
+          <li><span>Saturday *:</span> <span>8am-2:30pm</span></li>
           <li><span>Sunday:</span> <span>Closed</span></li>
         </ul>
+        <p className="location-note mt-2"><em>* when available</em></p>
       </div>
 
       <div className="appointment-button-container">

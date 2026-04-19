@@ -82,7 +82,7 @@ const Pricing = () => {
                                         <span className="pricing-card_currency">$</span>125<span className="pricing-card_duration">.00</span>
                                     </h4>
                                     <div className="pricing-card-details">
-                                        <p>Ideal for those seeking more in-depth or deep care. A longer session allows Michael to address multiple areas of concern, work through more complex patterns of tension, and spend extra time on hands-on treatment for lasting results.</p>
+                                        <p>Ideal for those seeking more in-depth or deep care. A longer session allows Michael to address multiple areas of concern, work through more complex patterns of tension, and spend extra time with hands-on treatment for lasting results.</p>
                                     </div>
                                     <Button
                                         component={Link}

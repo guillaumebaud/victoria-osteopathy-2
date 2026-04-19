@@ -5,7 +5,6 @@ import { Button } from "@mui/material";
 import {
   ArrowOutward as ArrowOutwardIcon,
   CheckOutlined,
-  VolunteerActivismOutlined,
   ArrowForwardOutlined,
 } from "@mui/icons-material";
 
@@ -43,13 +42,13 @@ const AboutOsteopathyContent = () => {
             </div>
             <div className="col-lg-6">
               <div className="osteopathy-image">
-                {/* Placeholder for a relevant osteopathy image */}
-                <div className="placeholder-image">
-                  <div className="placeholder-content">
-                    <VolunteerActivismOutlined />
-                    <p>Holistic Manual Therapy</p>
-                  </div>
-                </div>
+                <Image
+                  src="/assets/aboutosteopathy.jpg"
+                  alt="Holistic Manual Therapy"
+                  width={600}
+                  height={400}
+                  style={{ width: "100%", height: "400px", objectFit: "cover" }}
+                />
               </div>
             </div>
           </div>
